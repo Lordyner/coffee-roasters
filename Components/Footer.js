@@ -3,22 +3,16 @@ import classes from './Footer.module.css';
 import Image from 'next/image';
 import GlobalContext from '@/Store/GlobalContext';
 import Link from 'next/link';
-import logo from '@/public/images/shared/desktop/logo_white.svg';
-import iconFacebook from '@/public/images/shared/desktop/facebook.svg';
-import iconPinterest from '@/public/images/shared/desktop/pinterest.svg';
-import iconTwitter from '@/public/images/shared/desktop/twitter.svg';
-import iconYoutube from '@/public/images/shared/desktop/youtube.svg';
-import iconInstagram from '@/public/images/shared/desktop/instagram.svg';
+
 
 const Footer = () => {
-    const { isDesktopResolution } = useContext(GlobalContext);
     return (
         <footer className={`${classes.footer}`}>
             <div className={`${classes.wrapper} max-width`}>
                 <div className={classes.logoLinksAndSocials}>
 
                     <Link href="/" className={classes.logo}>
-                        <Image src={logo} alt='logo payAPI' className={classes.logoImg} />
+                        {/* <Image src={logo} alt='logo payAPI' className={classes.logoImg} /> */}
                     </Link>
                     <div className={classes.socialsAndLinks}>
                         <div className={classes.links}>
@@ -28,7 +22,7 @@ const Footer = () => {
                             <Link href='/pricing' className={classes.link}>Pricing</Link>
                         </div>
                         <div className={classes.socialLinks}>
-                            <a href="" className={classes.icon} target='_blank'>
+                            {/* <a href="" className={classes.icon} target='_blank'>
                                 <Image src={iconFacebook} alt='facebook' />
                             </a>
                             <a href="" className={classes.icon} target='_blank'>
@@ -42,7 +36,7 @@ const Footer = () => {
                             </a>
                             <a href="" className={classes.icon} target='_blank'>
                                 <Image src={iconInstagram} alt='icon instagram' />
-                            </a>
+                            </a> */}
 
                         </div>
                     </div>

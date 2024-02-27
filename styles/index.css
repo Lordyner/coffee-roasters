@@ -1,9 +1,12 @@
 :root {
     /* Colors */
-    --pure-black: #000000;
-    --light-grey: #DFDFDF;
-    --pure-white: #FFFFFF;
-    --main-accent: linear-gradient(12deg, rgba(255, 197, 147, 1) 0%, rgba(188, 113, 152, 1) 53%, rgba(90, 119, 255, 1) 95%);
+    --primary-color: #0E8784;
+    --secondary-color: #333D4B;
+    --tertiary-color: #FDD6BA;
+
+    --light-cream: #FEFCF7;
+    --grey: #83888F;
+
     /* Breakpoints */
     --desktop: 1440px;
     --laptop: 1040px;
@@ -11,28 +14,49 @@
     --mobile: 375px;
 
     /* Fonts size */
-    --heading-900: 2rem;
-    --body-500: 0.938rem;
+    --heading-900: 9.375rem;
+    --heading-800: 2.5rem;
+    --heading-700: 2rem;
+    --heading-600: 1.75rem;
+    --heading-500: 1.5rem;
+    --body-500: 1rem;
 
-    --line-height-heading-900: 2.5rem;
-    --line-height-body-500: 1.563rem;
-
-    --letter-spacing-heading-900: 0.208rem;
-
+    --line-height-heading-900: 4.5rem;
+    --line-height-heading-800: 2.5rem;
+    --line-height-heading-700: 2.25rem;
+    --line-height-heading-600: 2rem;
+    --line-height-heading-500: 2rem;
+    --line-height-body-500: 1.625rem;
 
     /* Padding */
     --sidePadding: 1.5rem;
+    --topPadding: 2rem;
+    --botPadding: 4.5rem;
 }
 
 @media screen and (min-width: 768px) {
     :root {
         /* Fonts size */
-        --heading-900: 2.5rem;
-        --body-500: 1.125rem;
+        --heading-900: 9.375rem;
 
-        --line-height-heading-900: 3rem;
+        --heading-800: 3rem;
+        --heading-700: 2rem;
+        --heading-600: 1.75rem;
+        --heading-500: 1.5rem;
+        --body-500: 1rem;
 
-        --letter-spacing-heading-900: 0.261rem;
+        --line-height-heading-900: 4.5rem;
+
+        --line-height-heading-800: 3rem;
+        --line-height-heading-700: 2.25rem;
+        --line-height-heading-600: 2rem;
+        --line-height-heading-500: 2rem;
+        --line-height-body-500: 1.625rem;
+
+        /* Padding */
+        --sidePadding: 2.5rem;
+        --topPadding: 2rem;
+        --botPadding: 4.5rem;
 
     }
 }
@@ -41,10 +65,21 @@
 @media screen and (min-width: 1440px) {
     :root {
         /* Fonts size */
-        --heading-900: 2.5rem;
+        --heading-900: 9.375rem;
+        --heading-800: 4.5rem;
+        --heading-700: 2.5rem;
+        --heading-600: 2rem;
+        --heading-500: 1.5rem;
         --body-500: 1.125rem;
 
-        --line-height-heading-900: 3rem;
+        --line-height-heading-900: 4.5rem;
+        --line-height-heading-800: 4.5rem;
+        --line-height-heading-700: 3rem;
+        --line-height-heading-600: 2.5rem;
+        --line-height-heading-500: 2rem;
+
+        /* Padding */
+        --sidePadding: 5rem;
     }
 }
 
@@ -52,21 +87,27 @@
 
 /* Font-family */
 @font-face {
-    font-family: DMSansBold;
-    src: url('../public/fonts/DM_Sans/DMSans-Bold.ttf');
+    font-family: BarlowRegular;
+    src: url('../public/fonts/Barlow/Barlow-Regular.ttf');
 }
 
 @font-face {
-    font-family: DMSansRegular;
-    src: url('../public/fonts/DM_Sans/DMSans-Regular.ttf');
+    font-family: BarlowBold;
+    src: url('../public/fonts/Barlow/Barlow-Bold.ttf');
 }
+
+@font-face {
+    font-family: FrauncesBlack;
+    src: url('../public/fonts/Fraunces/Fraunces_9pt-Black.ttf');
+}
+
+
 
 
 * {
     margin: 0;
     padding: 0;
     /* box-sizing: inherit; */
-    font-family: 'DMSansRegular';
 }
 
 
@@ -77,12 +118,17 @@ html {
 }
 
 body {
-    scroll-behavior: smooth;
     font-size: var(--body-500);
     line-height: var(--line-height-body-500);
-    background-color: var(--pure-white);
-    font-family: 'DMSansRegular';
+    font-family: 'BarlowRegular';
 
+    scroll-behavior: smooth;
+    background-color: var(--light-cream);
+
+}
+
+.container {
+    padding: var(--topPadding) var(--sidePadding) var(--botPadding) var(--sidePadding);
 }
 
 img {
@@ -94,87 +140,61 @@ img {
 h1,
 h2,
 h3,
-h4,
-h5,
-h6 {
-    font-family: 'DMSansBold';
+h4 {
+    font-family: 'FrauncesBlack';
+}
+
+h1 {
+    font-size: var(--heading-800);
+    line-height: var(--line-height-heading-800);
+    color: var(--light-cream);
+}
+
+h2 {
+    font-size: var(--heading-700);
+    line-height: var(--line-height-heading-700);
+}
+
+h3 {
+    font-size: var(--heading-600);
+    line-height: var(--line-height-heading-600);
+}
+
+h4 {
+    font-size: var(--heading-500);
+    line-height: var(--line-height-heading-500);
 }
 
 
 
 /* Button */
 a.primary-link,
-a.primary-link,
 button {
     display: flex;
     justify-content: center;
-    padding: .75rem 1.5rem;
+    padding: .938rem 1.938rem;
     border: none;
+    border-radius: 6px;
     background-color: transparent;
     cursor: pointer;
 
     text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: .156rem;
-    font-family: 'DMSansBold';
-    font-size: 0.688rem;
-    line-height: normal;
+    font-family: 'FrauncesBlack';
+    font-size: var(--body-500);
+    line-height: 1.563rem;
+
+    background-color: var(--primary-color);
+    color: var(--light-cream);
 }
 
-a.primary-link.light {
-    background-color: var(--pure-black);
-    color: var(--pure-white);
+a.primary-link:hover {
+    background-color: #66D2CF;
 }
 
-a.primary-link.dark {
-    background-color: var(--pure-white);
-    color: var(--pure-black);
+a.primary-link:disabled {
+    background-color: #E2DEDB;
 }
 
-
-a.primary-link.light:hover,
-a.primary-link.dark:hover {
-    background-color: var(--light-grey);
-    color: var(--pure-black);
-}
-
-a.secondary-link {
-    font-size: 0.75rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    text-decoration: none;
-    width: fit-content;
-    font-family: 'DMSansBold';
-    line-height: normal;
-}
-
-a.secondary-link:hover {
-    text-decoration: underline;
-}
-
-a.secondary-link.light {
-    color: var(--pure-black);
-}
-
-a.secondary-link.dark {
-    color: var(--pure-white);
-}
-
-a.secondary-link::after {
-    content: '';
-    display: inline-block;
-    width: 2.625rem;
-    height: .75rem;
-    margin-left: 1rem;
-}
-
-a.secondary-link.dark::after {
-    background: url('../public/images/shared/desktop/arrow.svg') no-repeat;
-}
-
-a.secondary-link.light::after {
-    background: url('../public/images/shared/desktop/arrow_white.svg') no-repeat;
-}
 
 .switch-wrapper {
     display: flex;
@@ -200,123 +220,6 @@ a.secondary-link.light::after {
     top: 0;
 }
 
-/* Style for hero component */
-.heroStories,
-.hero {
-    display: flex;
-    flex-direction: column-reverse;
-}
-
-.heroStories,
-.hero.dark {
-    background-color: var(--pure-black);
-    color: var(--pure-white);
-}
-
-.hero.light {
-    background-color: var(--pure-white);
-    color: var(--pure-black);
-}
-
-.heroStories h1,
-.hero h2 {
-    font-size: var(--heading-900);
-    line-height: var(--line-height-heading-900);
-    letter-spacing: var(--letter-spacing-heading-900);
-
-    text-align: left;
-    text-transform: uppercase;
-
-}
-
-.heroText {
-    position: relative;
-    padding: 4.5rem 1.5rem 4.5rem 1.5rem;
-
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.heroText p {
-    font-size: 0.938rem;
-    opacity: .6;
-}
-
-.heroTextContent {
-    display: flex;
-    flex-direction: column;
-    gap: 1.438rem;
-}
-
-.mainAccent {
-    position: relative;
-}
-
-.mainAccent::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    width: 8rem;
-    height: .375rem;
-    background: var(--main-accent);
-}
-
-
-
-.hero.dark p {
-    opacity: .6;
-    text-align: left;
-}
-
-.hero.light p {
-    text-align: left;
-}
-
-.heroImg {
-    object-fit: cover;
-    height: auto;
-    margin-inline: auto;
-    width: 100%;
-}
-
-.heroStories .preTitle {
-    font-size: .75rem;
-    letter-spacing: 0.125rem;
-    text-transform: uppercase;
-    opacity: 1;
-    color: var(--pure-white);
-    line-height: normal;
-}
-
-.heroStories .heroText {
-    padding: 3rem 1.75rem;
-}
-
-.heroStories .heroTextContent p {
-    padding-top: .5rem;
-}
-
-.heroDateAndAuthor {
-    display: flex;
-    gap: 0.5rem;
-    line-height: normal;
-}
-
-.author {
-    opacity: 1 !important;
-}
-
-.periodicity {
-    font-size: 1.125rem;
-    font-family: 'DMSansBold';
-    opacity: .5;
-
-}
-
-.periodicity.active {
-    opacity: 1;
-}
 
 
 /* UTILS */
@@ -438,8 +341,6 @@ a.secondary-link.light::after {
 }
 
 
-
-
 /* Media queries */
 
 @media screen and (min-width: 768px) {
@@ -453,98 +354,11 @@ a.secondary-link.light::after {
         letter-spacing: .125rem;
     }
 
-
-    .hero.imgFirst {
-        display: grid;
-        grid-template-areas: 'image textHero';
-        grid-template-columns: 35.5% 64.5%;
-    }
-
-    .hero.textFirst {
-        display: grid;
-        grid-template-areas: 'textHero image';
-        grid-template-columns: 64.5% 35.5%;
-    }
-
-    .grid-image {
-        grid-area: image;
-    }
-
-    .grid-text {
-        grid-area: textHero;
-    }
-
-
-    .heroText {
-        justify-content: center;
-        padding-left: 3.375rem;
-        padding-right: 3.375rem;
-        gap: 1.313rem;
-
-    }
-
-    .heroTextContent {
-        gap: 3rem;
-    }
-
-    .mainAccent::before {
-
-        left: -9.29rem;
-        width: 19rem;
-        top: 20.5rem;
-        bottom: 0rem;
-        rotate: 90deg;
-        height: 0.375rem;
-    }
-
-    .mainAccent.smallerAccent::before {
-        top: 15.5rem;
-        width: 8.5rem;
-        left: -4.1rem;
-    }
-
-    .heroImg {
-        height: revert-layer;
-    }
-
     .switch-wrapper {
 
         padding-top: 7rem;
     }
 
-    /* Hero stories */
-
-    .heroStories {
-        padding: 7.625rem 2.5rem;
-        background-image: url('../public/images/stories/tablet/moon-of-appalacia.jpg');
-        background-size: cover;
-    }
-
-    .heroStories .heroText {
-        max-width: 25.375rem;
-        padding: 0;
-        gap: 0;
-    }
-
-    .heroStories .heroTextContent {
-        gap: 1.438rem;
-    }
-
-    .heroStories .heroTextContent p {
-        padding: 0;
-    }
-
-    .preTitle {
-        padding-bottom: 1.5rem;
-    }
-
-    .heroStories h1 {
-        padding-bottom: 1rem;
-    }
-
-    .heroDateAndAuthor {
-        padding-bottom: 1.5rem;
-    }
 
 }
 
@@ -552,30 +366,6 @@ a.secondary-link.light::after {
     .max-width {
         max-width: 69.375rem;
         margin-inline: auto;
-    }
-
-    .heroText {
-        padding-left: 7rem;
-        padding-right: 7rem;
-    }
-
-
-    .hero.imgFirst {
-        display: grid;
-        grid-template-areas: 'image textHero';
-        grid-template-columns: 57.6% 42.4%;
-    }
-
-    .hero.textFirst {
-        display: grid;
-        grid-template-areas: 'textHero image';
-        grid-template-columns: 42.4% 57.6%;
-    }
-
-    .heroStories {
-        padding: 7.625rem 7rem;
-        background-image: url('../public/images/stories/desktop/moon-of-appalacia.jpg');
-        background-size: cover;
     }
 
 

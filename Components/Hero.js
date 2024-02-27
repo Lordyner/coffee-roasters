@@ -1,18 +1,16 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-const Hero = ({ image, alt, title, text, CTA, theme, withMainAccent, heroGridClass, mainAccentClass }) => {
+import classes from './Hero.module.css';
+const Hero = () => {
 
     return (
-        <div className={`hero ${theme} ${heroGridClass}`}>
-            <div className={`${withMainAccent ? 'mainAccent ' + mainAccentClass : ''} heroText grid-text`}>
-                <h2>{title}</h2>
-                <div className='heroTextContent'>
-                    <p>{text}</p>
-                    {CTA && <Link href="#" className={`secondary-link ${theme}`}>{CTA}</Link>}
-                </div>
+        <div className={classes.hero}>
+            <div className={classes.text}>
+                <h1>Great coffee made simple.</h1>
+                <p className={classes.description}> Start your mornings with the world&apos;s best coffees. Try our expertly curated artisan coffees from our best roasters delivered directly to your door, at your schedule.</p>
             </div>
-            <Image src={image} alt={alt} className='heroImg grid-image' />
+            <Link href="/" className='primary-link'>Create your plan</Link>
         </div>
     );
 };

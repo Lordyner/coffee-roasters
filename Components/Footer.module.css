@@ -1,7 +1,7 @@
 .footer {
 
-    background-color: var(--pure-black);
-    color: var(--pure-white);
+    background-color: var(--secondary-color);
+    color: #fff;
 
     padding: 3.5rem 2rem;
 }
@@ -47,12 +47,12 @@
     align-items: center;
     justify-content: center;
     gap: 1.188rem;
-    color: var(--pure-white);
+    color: #fff;
 
 }
 
 .link {
-    color: var(--pure-white);
+    color: #fff;
     text-decoration: none;
     text-transform: uppercase;
 

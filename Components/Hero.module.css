@@ -1,1 +1,66 @@
-/* Code set in index.css so that I can use theming on it */
+.hero {
+    padding: 6.25rem 1.5rem;
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    align-items: center;
+
+    text-align: center;
+
+    background: url('../public/images/home/mobile/image-hero-coffeepress.jpg') no-repeat;
+    filter: saturate(150%) contrast(1.1);
+    background-size: cover;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.description {
+    opacity: .8;
+    font-size: .938rem;
+    color: var(--light-cream);
+    line-height: 1.563rem;
+}
+
+@media screen and (min-width: 768px) {
+    .hero {
+        padding: 6.5rem 3.625rem;
+
+        background: url('../public/images/home/tablet/image-hero-coffeepress.jpg') no-repeat;
+        background-size: cover;
+
+        align-items: start;
+        text-align: left;
+    }
+
+    .text {
+        max-width: 24.875rem;
+    }
+
+}
+
+@media screen and (min-width: 1440px) {
+    .hero {
+        background: url('../public/images/home/desktop/image-hero-coffeepress.jpg') no-repeat;
+        background-size: cover;
+        gap: 3.5rem;
+        padding: 7.25rem 5.313rem;
+    }
+
+    .text {
+
+        max-width: 30.813rem;
+        gap: 2rem;
+    }
+
+    .description {
+        font-size: 1rem;
+        max-width: 85%;
+    }
+
+}

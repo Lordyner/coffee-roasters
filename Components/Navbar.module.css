@@ -1,9 +1,7 @@
 .header {
-    padding: 1.75rem 1.5rem;
-    background-color: var(--pure-white);
-
+    background-color: var(--light-cream);
     position: relative;
-    z-index: 100;
+    padding-bottom: 2.5rem;
 }
 
 .navbar {
@@ -21,18 +19,26 @@
 
 .mobileNav {
     width: 100%;
-    height: 15.813rem;
+    height: 100vh;
     position: fixed;
     z-index: 98;
-    top: -30rem;
+    top: -100vh;
     left: 0;
     transition: .5s ease-in-out;
-    background-color: var(--pure-white);
+    /* background-color: var(--light-cream); */
+    background: -moz-linear-gradient(top, rgba(254, 252, 247, 1) 51vh, rgba(254, 252, 247, 0.7) 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(254, 252, 247, 1) 51vh, rgba(254, 252, 247, 0.7) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(254, 252, 247, 1) 51vh, rgba(254, 252, 247, 0.7) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#00ffffff', GradientType=0);
+    /* IE6-9 */
 }
 
 
 .mobileNav.active {
-    top: 4.5rem;
+    top: 0;
 
 }
 
@@ -43,7 +49,7 @@
 .mobileNavWrapper {
     position: relative;
     height: inherit;
-    padding: 2rem;
+    padding: var(--topPadding) var(--sidePadding) 0 var(--sidePadding);
 
     display: flex;
     flex-direction: column;
@@ -54,32 +60,25 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1.25rem;
+    gap: 2rem;
+    padding-top: 5rem;
 
-    padding-bottom: 1.25rem;
-}
-
-
-.separator {
-    width: 100%;
-    height: 1px;
-    background-color: #979797;
-    margin-bottom: 1.25rem;
 }
 
 
 .mobileLink {
-    color: var(--pure-black);
-    font-family: 'DMSansBold';
-    text-transform: uppercase;
+    color: var(--secondary-color);
+    font-family: 'FrauncesBlack';
     text-decoration: none;
-    letter-spacing: .156rem;
-    line-height: normal;
+    line-height: 2rem;
+    font-size: 1.5rem;
 }
 
 
 .logoImg {
+    width: 10.188rem;
     object-fit: contain;
+    height: auto;
 }
 
 
@@ -91,7 +90,7 @@
 .hamburger {
     position: relative;
     display: block;
-    width: 1.25rem;
+    width: 1rem;
     appearance: none;
     background: none;
     border: none;
@@ -100,20 +99,22 @@
     z-index: 99;
 }
 
-.hamburger::after,
-.hamburger::before {
+.hamburger .bar,
+.hamburger:after,
+.hamburger:before {
     content: '';
     display: block;
     width: 100%;
-    height: 2px;
-    background-color: var(--pure-black);
-    margin: 4px 0;
+    height: 3px;
+    background-color: var(--secondary-color);
+    margin: 3px 0;
     transition: .4s;
+
 }
 
 .hamburger.isActive:before {
-    transform: rotate(-45deg) translate(2px, 1px);
-    background-color: var(--pure-black);
+    transform: rotate(-45deg) translate(-2px, 4px);
+    background-color: var(--secondary-color);
 
 }
 
@@ -122,17 +123,12 @@
 }
 
 .hamburger.isActive:after {
-    background-color: var(--pure-black);
-    transform: rotate(45deg) translate(-3px, -7px);
+    background-color: var(--secondary-color);
+    transform: rotate(45deg) translate(-4px, -7px);
 }
 
 
 @media (min-width: 768px) {
-
-    .header {
-        padding: 1rem 2.5rem;
-    }
-
 
     .hamburger {
         display: none;
@@ -140,45 +136,38 @@
 
     .navLink {
         display: flex;
-        gap: 2.313rem;
-        padding-right: 3.188rem;
+        gap: 2rem;
     }
 
     .link {
         font-size: .75rem;
-        font-family: 'DMSansBold';
+        font-family: 'BarlowBold';
         text-transform: uppercase;
         text-decoration: none;
-        letter-spacing: 0.125rem;
-        color: var(--pure-black);
+        letter-spacing: .92px;
+        color: var(--grey);
+        line-height: .938rem;
 
     }
 
-    .logo {
-        padding-right: 2.563rem;
-    }
+
 
     .navWrapper {
         justify-content: space-between;
         align-items: center;
         gap: 0;
     }
+
+    .logoImg {
+        width: unset;
+    }
 }
 
 
 @media (min-width: 1440px) {
-    .logo {
-        padding-right: 0;
-    }
 
-    .navLink {
-
-        padding-right: 0;
-    }
-
-    .navWrapper {
-        justify-content: space-around;
-
+    .header {
+        padding-bottom: 2.715rem;
     }
 
     .link:hover {
