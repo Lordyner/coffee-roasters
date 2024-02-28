@@ -1,0 +1,84 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3.5rem;
+
+    text-align: center;
+
+    background-color: var(--primary-color);
+    color: var(--tertiary-color);
+
+    padding: 4.5rem .75rem 3.188rem .75rem;
+    border-radius: 10px;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    color: var(--light-cream);
+}
+
+.text h3 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+
+.icon {
+
+    min-height: 4.5rem;
+}
+
+@media screen and (min-width: 768px) {
+    .card {
+        flex-direction: row;
+        justify-content: center;
+        gap: 3.438rem;
+        padding: 2.563rem 3rem 2.563rem 4.375rem;
+
+        border-radius: 8px;
+    }
+
+    .text {
+        justify-content: flex-start;
+        text-align: left;
+        gap: 1rem;
+    }
+
+    .text p {
+        font-size: .938rem;
+    }
+
+    .icon {
+        width: 3.5rem;
+        height: auto;
+        min-height: fit-content;
+        object-fit: cover;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        padding: 4.5rem 3rem 3rem 3rem;
+        max-width: 21.875rem;
+    }
+
+    .text {
+        align-items: center;
+        text-align: center;
+    }
+
+    .text p {
+        font-size: 1rem;
+    }
+
+    .icon {
+        width: 4.5rem
+    }
+}
