@@ -36,6 +36,9 @@
 
         align-items: start;
         text-align: left;
+
+        filter: saturate(110%);
+
     }
 
     .text {

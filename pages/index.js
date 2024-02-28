@@ -6,6 +6,7 @@ import { useRouter } from 'next/router'
 import Navbar from '@/Components/Navbar'
 import Footer from '@/Components/Footer'
 import Hero from '@/Components/Hero'
+import Products from '@/Components/Products'
 
 
 export default function Home() {
@@ -63,6 +64,7 @@ export default function Home() {
       <div className='container'>
         <Navbar />
         <Hero />
+        <Products />
         {/* <Footer /> */}
       </div>
 
