@@ -73,6 +73,8 @@
         max-height: fit-content;
         background: unset;
         padding-top: 3.375rem;
+        max-width: 69.375rem;
+        margin-inline: auto;
     }
 
     .text {

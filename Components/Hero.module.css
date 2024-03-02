@@ -1,6 +1,14 @@
 .hero {
-    padding: 6.25rem 1.5rem;
     border-radius: 10px;
+
+
+    background: url('../public/images/home/mobile/image-hero-coffeepress.jpg') no-repeat;
+    filter: saturate(150%) contrast(1.1);
+    background-size: cover;
+}
+
+.wrapper {
+    padding: 6.25rem 1.5rem;
 
     display: flex;
     flex-direction: column;
@@ -8,10 +16,6 @@
     align-items: center;
 
     text-align: center;
-
-    background: url('../public/images/home/mobile/image-hero-coffeepress.jpg') no-repeat;
-    filter: saturate(150%) contrast(1.1);
-    background-size: cover;
 }
 
 .text {
@@ -29,16 +33,21 @@
 
 @media screen and (min-width: 768px) {
     .hero {
-        padding: 6.5rem 3.625rem;
 
         background: url('../public/images/home/tablet/image-hero-coffeepress.jpg') no-repeat;
         background-size: cover;
 
-        align-items: start;
-        text-align: left;
+
 
         filter: saturate(110%);
 
+    }
+
+    .wrapper {
+        padding: 6.5rem 3.625rem;
+
+        align-items: start;
+        text-align: left;
     }
 
     .text {
@@ -51,6 +60,10 @@
     .hero {
         background: url('../public/images/home/desktop/image-hero-coffeepress.jpg') no-repeat;
         background-size: cover;
+
+    }
+
+    .wrapper {
         gap: 3.5rem;
         padding: 7.25rem 5.313rem;
     }

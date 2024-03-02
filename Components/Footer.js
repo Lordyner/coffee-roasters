@@ -10,7 +10,7 @@ import instagramIcon from '@/public/images/shared/desktop/icon-instagram.svg'
 
 const Footer = () => {
     return (
-        <footer className={`${classes.footer}`}>
+        <footer className={`${classes.footer} max-width`}>
             <div className={`${classes.wrapper}`}>
                 <Image src={logo} alt="logo" className={classes.logo} />
                 <div className={`${classes.links}`}>

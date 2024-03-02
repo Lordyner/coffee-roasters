@@ -16,7 +16,7 @@ const Navbar = () => {
 
 
     return (
-        <header className={`${classes.header}`}>
+        <header className={`${classes.header} max-width`}>
             <nav className={classes.navbar}>
                 <div className={classes.navWrapper}>
                     <div className={classes.logo}>

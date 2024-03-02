@@ -7,14 +7,14 @@ import Value from './Value';
 
 const Values = () => {
     return (
-        <section className={classes.values}>
+        <section className={`${classes.values} max-width`}>
             <div className={classes.container}>
                 <div className={classes.text}>
 
                     <h2>Why choose us?</h2>
                     <p>A large part of our role is choosing which particular coffees will be featured  in our range. This means working closely with the best coffee growers to give you a more impactful experience on every level.</p>
                 </div>
-                <div className={`${classes.valuesWrapper} max-width`}>
+                <div className={`${classes.valuesWrapper}`}>
                     <Value icon={iconCoffeeBean} alt="Coffee Bean" title="Best quality" description="Discover an endless variety of the world's best artisan coffee from each of our roasters." />
                     <Value icon={iconGift} alt="Gift" title="Exclusive benefits" description="Special offers and swag when you subscribe, including 30% off your first shipment." />
                     <Value icon={iconTruck} alt="Truck" title="Free shipping" description="We cover the cost and coffee is delivered fast. Peak freshness: guaranteed." />

@@ -107,6 +107,8 @@
         padding-top: 22.5rem;
         padding-left: 5.313rem;
         padding-right: 5.313rem;
+        max-width: 69.375rem;
+        margin-inline: auto;
     }
 
     .steps {
