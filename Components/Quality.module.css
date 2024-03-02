@@ -9,6 +9,7 @@
     border-radius: 10px;
     position: relative;
     padding: 0 1.5rem 3.8125rem 1.5rem;
+    margin-inline: auto;
 }
 
 
@@ -20,7 +21,6 @@
     text-align: center;
     gap: 1.5rem;
     color: var(--light-cream);
-    padding-top: 8.875rem;
 }
 
 .content h2 {
@@ -36,10 +36,8 @@
 
 .qualityCoffeeImg {
     height: auto;
-    object-fit: contain;
+    object-fit: cover;
     border-radius: 0.625rem;
-    position: absolute;
-    transform: translateY(-50%) translateX(-50%);
-    width: calc(100% - 40px);
-    left: 50%;
+    transform: translateY(-50%);
+    width: 100%;
 }
