@@ -1,0 +1,83 @@
+.hero {
+    background: url('../public/images/about/mobile/image-hero-whitecup.jpg') no-repeat;
+    background-size: cover;
+    filter: saturate(110%);
+    border-radius: 10px;
+}
+
+.wrapper {
+
+    padding: 6.938rem 1.5rem 5.438rem 1.5rem;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+    color: var(--light-cream);
+}
+
+.hero h1 {
+    font-size: 1.75rem;
+    line-height: 1.75rem;
+}
+
+.aboutUs {
+    font-size: .938rem;
+    line-height: 1.563rem;
+    opacity: .8;
+}
+
+@media screen and (min-width: 768px) {
+    .hero {
+        background: url('../public/images/about/tablet/image-hero-whitecup.jpg') no-repeat;
+        background-size: cover;
+        filter: saturate(110%);
+        border-radius: 10px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+        line-height: 2.5rem;
+    }
+
+
+    .wrapper {
+        padding: 7.375rem 3.625rem
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        max-width: 66%;
+    }
+
+}
+
+@media screen and (min-width: 1440px) {
+    .hero {
+        background: url('../public/images/about/desktop/image-hero-whitecup.jpg') no-repeat;
+        background-size: cover;
+        filter: saturate(110%);
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+        line-height: 3rem;
+    }
+
+
+    .wrapper {
+        padding: 8.563rem 5.313rem;
+    }
+
+    .content {
+        max-width: 40%;
+    }
+
+
+}

@@ -1,0 +1,40 @@
+.quality {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.wrapper {
+    background-color: #2C343E;
+    border-radius: 10px;
+    padding: 0 1.5rem 3.8125rem 1.5rem;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+    color: var(--light-cream);
+}
+
+.content h2 {
+    font-size: 1.75rem;
+    line-height: 1.75rem;
+}
+
+.description {
+    font-size: 0.9375rem;
+    line-height: 1.5625rem;
+    opacity: .8;
+}
+
+.qualityCoffeeImg {
+    height: auto;
+    object-fit: cover;
+    border-radius: 0.625rem;
+    position: relative;
+    top: -5rem;
+    margin-inline: auto;
+}

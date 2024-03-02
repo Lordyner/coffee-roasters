@@ -5,6 +5,7 @@
     background: url('../public/images/home/mobile/image-hero-coffeepress.jpg') no-repeat;
     filter: saturate(150%) contrast(1.1);
     background-size: cover;
+    margin-bottom: var(--gap);
 }
 
 .wrapper {
@@ -60,6 +61,7 @@
     .hero {
         background: url('../public/images/home/desktop/image-hero-coffeepress.jpg') no-repeat;
         background-size: cover;
+        margin-bottom: 8.5rem;
 
     }
 

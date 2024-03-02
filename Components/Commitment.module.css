@@ -1,0 +1,60 @@
+.commitment {
+    max-width: 69.375rem;
+    margin-inline: auto;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.875rem;
+}
+
+.content h2 {
+    font-size: 2rem;
+    line-height: 3rem;
+}
+
+.description {
+    font-size: .938rem;
+    line-height: 1.5625rem;
+}
+
+.baristaImg {
+    object-fit: cover;
+    height: auto;
+    border-radius: 0.625rem;
+    filter: saturate(1.2);
+}
+
+@media screen and (min-width: 48rem) {
+    .wrapper {
+        display: grid;
+        grid-template-columns: max-content 1fr;
+        column-gap: 4.3125rem;
+    }
+
+    .content {
+        text-align: left;
+        align-items: flex-start;
+        align-self: center;
+    }
+}
+
+@media screen and (min-width: 90rem) {
+    .wrapper {
+        column-gap: 7.8125rem;
+    }
+
+    .content {
+        max-width: 33.75rem;
+        gap: 2rem;
+    }
+}

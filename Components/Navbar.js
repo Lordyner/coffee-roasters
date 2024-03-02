@@ -27,7 +27,7 @@ const Navbar = () => {
                     {/* Classic links */}
                     <div className={`${isMobileResolution ? "display-none" : classes.navLink}`}>
                         <Link href="/" className={classes.link}>Home</Link>
-                        <Link href="/" className={classes.link}>About us</Link>
+                        <Link href="/about" className={classes.link}>About us</Link>
                         <Link href="/" className={classes.link}>Create your plan</Link>
                     </div>
 
@@ -51,23 +51,23 @@ const Navbar = () => {
                             {/* Classic links */}
                             <div className={`${isMobileResolution ? "display-none" : classes.navLink}`}>
                                 <Link href="/" className={classes.link}>Home</Link>
-                                <Link href="/" className={classes.link}>About us</Link>
+                                <Link href="/about" className={classes.link}>About us</Link>
                                 <Link href="/" className={classes.link}>Create your plan</Link>
                             </div>
 
 
                             <div className={classes.mobileLinks}>
-                                <Link href="/stories" className={classes.mobileLink} onClick={() => {
+                                <Link href="/" className={classes.mobileLink} onClick={() => {
                                     toggleMenu();
                                     burger.current.classList.toggle(classes.isActive);
                                 }}>Home</Link>
 
-                                <Link href="/features" className={classes.mobileLink} onClick={() => {
+                                <Link href="/about" className={classes.mobileLink} onClick={() => {
                                     toggleMenu();
                                     burger.current.classList.toggle(classes.isActive);
                                 }}>About us</Link>
 
-                                <Link href="/pricing" className={classes.mobileLink} onClick={() => {
+                                <Link href="/" className={classes.mobileLink} onClick={() => {
                                     toggleMenu();
                                     burger.current.classList.toggle(classes.isActive);
                                 }}>Create your plan</Link>
