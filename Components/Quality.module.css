@@ -7,7 +7,12 @@
 .wrapper {
     background-color: #2C343E;
     border-radius: 10px;
+    position: relative;
+}
+
+.bg {
     padding: 0 1.5rem 3.8125rem 1.5rem;
+
 }
 
 .content {
@@ -17,6 +22,7 @@
     text-align: center;
     gap: 1.5rem;
     color: var(--light-cream);
+    padding-top: 8.875rem;
 }
 
 .content h2 {
@@ -34,7 +40,7 @@
     height: auto;
     object-fit: cover;
     border-radius: 0.625rem;
-    position: relative;
-    top: -5rem;
+    position: absolute;
+    transform: translateY(-50%);
     margin-inline: auto;
 }

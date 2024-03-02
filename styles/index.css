@@ -140,8 +140,8 @@ body {
     flex-direction: column;
     gap: 7.5rem;
 
-    max-width: 90rem;
-    margin-inline: auto;
+    /* max-width: 90rem;
+    margin-inline: auto; */
 }
 
 img {
