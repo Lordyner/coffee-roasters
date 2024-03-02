@@ -8,12 +8,10 @@
     background-color: #2C343E;
     border-radius: 10px;
     position: relative;
-}
-
-.bg {
     padding: 0 1.5rem 3.8125rem 1.5rem;
-
 }
+
+
 
 .content {
     display: flex;
@@ -38,9 +36,10 @@
 
 .qualityCoffeeImg {
     height: auto;
-    object-fit: cover;
+    object-fit: contain;
     border-radius: 0.625rem;
     position: absolute;
-    transform: translateY(-50%);
-    margin-inline: auto;
+    transform: translateY(-50%) translateX(-50%);
+    width: calc(100% - 40px);
+    left: 50%;
 }

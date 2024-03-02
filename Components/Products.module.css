@@ -45,10 +45,13 @@
 @media (min-width: 1440px) {
 
 
+
     .productsWrapper {
         flex-direction: row;
         gap: 1.875rem;
         padding: 0;
+        padding-left: 5.313rem;
+        padding-right: 5.313rem;
     }
 
     .bigTitle {

@@ -58,4 +58,8 @@
         max-width: 33.75rem;
         gap: 2rem;
     }
+
+    .commitment {
+        padding: 0 5.313rem;
+    }
 }

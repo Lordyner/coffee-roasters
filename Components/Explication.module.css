@@ -1,6 +1,10 @@
 .explication {
     padding-top: calc(37rem + var(--gap));
     padding-bottom: var(--gap);
+
+}
+
+.wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -82,7 +86,11 @@
 
     .explication {
         padding-top: calc(19rem + var(--gap));
+    }
+
+    .wrapper {
         align-items: flex-start;
+
     }
 
     .steps {
@@ -106,10 +114,12 @@
 @media screen and (min-width: 1440px) {
     .explication {
         padding-top: calc(10rem + var(--gap));
+
+    }
+
+    .wrapper {
         padding-left: 5.313rem;
         padding-right: 5.313rem;
-        max-width: 69.375rem;
-        margin-inline: auto;
     }
 
     .steps {

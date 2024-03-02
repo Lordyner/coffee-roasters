@@ -8,6 +8,7 @@ import Footer from '@/Components/Footer'
 import AboutHero from '@/Components/AboutHero'
 import Commitment from '@/Components/Commitment'
 import Quality from '@/Components/Quality'
+import Headquarters from '@/Components/Headquarters'
 
 
 export default function About() {
@@ -70,8 +71,9 @@ export default function About() {
                     <AboutHero />
                     <Commitment />
                     <Quality />
-                    <Footer />
+                    <Headquarters />
                 </div>
+                <Footer />
             </div>
 
 

@@ -1,0 +1,48 @@
+.headquarters {
+    text-align: center;
+    padding-bottom: 7.5rem;
+}
+
+.wrapper {
+    padding-top: 4.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5rem;
+}
+
+.headquarters h2 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    color: var(--grey);
+}
+
+@media (min-width: 768px) {
+
+    .wrapper {
+        gap: 0;
+    }
+
+    .headquarters {
+        text-align: left;
+        padding-bottom: 9rem;
+    }
+
+    .wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media (min-width: 90rem) {
+    .wrapper {
+        max-width: 65.3125rem;
+    }
+
+    .headquarters {
+        padding-left: 5.313rem;
+        padding-right: 5.313rem;
+        padding-bottom: 10.5rem;
+
+    }
+}

@@ -1,0 +1,49 @@
+.headquarter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2.9375rem;
+}
+
+.headquarter h3 {
+    font-size: 1.75rem;
+    line-height: 2.25rem;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    gap: 1.375rem;
+}
+
+.contactInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: 1rem;
+    line-height: 1.625rem;
+}
+
+@media screen and (min-width: 768px) {
+    .headquarter {
+        align-items: flex-start;
+        text-align: left;
+        gap: 2.5625rem;
+    }
+
+    .contactInfo {
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .headquarter h3 {
+        font-size: 1.5rem;
+        line-height: 2.25rem;
+    }
+
+    .text {
+        gap: 1.3125rem;
+    }
+}
