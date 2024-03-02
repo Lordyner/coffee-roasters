@@ -3,50 +3,25 @@ import classes from './Footer.module.css';
 import Image from 'next/image';
 import GlobalContext from '@/Store/GlobalContext';
 import Link from 'next/link';
-
+import logo from '@/public/images/shared/desktop/logo_footer.svg'
+import facebookIcon from '@/public/images/shared/desktop/icon-facebook.svg'
+import twitterIcon from '@/public/images/shared/desktop/icon-twitter.svg'
+import instagramIcon from '@/public/images/shared/desktop/icon-instagram.svg'
 
 const Footer = () => {
     return (
         <footer className={`${classes.footer}`}>
-            <div className={`${classes.wrapper} max-width`}>
-                <div className={classes.logoLinksAndSocials}>
-
-                    <Link href="/" className={classes.logo}>
-                        {/* <Image src={logo} alt='logo payAPI' className={classes.logoImg} /> */}
-                    </Link>
-                    <div className={classes.socialsAndLinks}>
-                        <div className={classes.links}>
-                            <Link href='/' className={classes.link}>Home</Link>
-                            <Link href='/stories' className={classes.link}>Stories</Link>
-                            <Link href='/features' className={classes.link}>Features</Link>
-                            <Link href='/pricing' className={classes.link}>Pricing</Link>
-                        </div>
-                        <div className={classes.socialLinks}>
-                            {/* <a href="" className={classes.icon} target='_blank'>
-                                <Image src={iconFacebook} alt='facebook' />
-                            </a>
-                            <a href="" className={classes.icon} target='_blank'>
-                                <Image src={iconYoutube} alt='icon youtube' />
-                            </a>
-                            <a href="" className={classes.icon} target='_blank'>
-                                <Image src={iconTwitter} alt='icon twitter' />
-                            </a>
-                            <a href="" className={classes.icon} target='_blank'>
-                                <Image src={iconPinterest} alt='icon pinterest' />
-                            </a>
-                            <a href="" className={classes.icon} target='_blank'>
-                                <Image src={iconInstagram} alt='icon instagram' />
-                            </a> */}
-
-                        </div>
-                    </div>
+            <div className={`${classes.wrapper}`}>
+                <Image src={logo} alt="logo" className={classes.logo} />
+                <div className={`${classes.links}`}>
+                    <Link href="/" className={classes.link}>Home</Link>
+                    <Link href="/" className={classes.link}>About us</Link>
+                    <Link href="/" className={classes.link}>Create your plan</Link>
                 </div>
-                <div className={classes.ctaAndCopyright}>
-                    <Link href='' className={`secondary-link dark ${classes.cta}`}>Get an invite</Link>
-
-                    <div className={classes.copyright}>
-                        <p>Copyright 2024. All Rights Reserved</p>
-                    </div>
+                <div className={`${classes.socials}`}>
+                    <Image src={facebookIcon} alt="facebook" />
+                    <Image src={twitterIcon} alt="twitter" />
+                    <Image src={instagramIcon} alt="instagram" />
                 </div>
             </div>
         </footer>

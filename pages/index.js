@@ -8,6 +8,7 @@ import Footer from '@/Components/Footer'
 import Hero from '@/Components/Hero'
 import Products from '@/Components/Products'
 import Values from '@/Components/Values'
+import Explication from '@/Components/Explication'
 
 
 export default function Home() {
@@ -67,7 +68,8 @@ export default function Home() {
         <Hero />
         <Products />
         <Values />
-        {/* <Footer /> */}
+        <Explication />
+        <Footer />
       </div>
 
 
