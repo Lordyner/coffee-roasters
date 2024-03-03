@@ -28,7 +28,7 @@ const Navbar = () => {
                     <div className={`${isMobileResolution ? "display-none" : classes.navLink}`}>
                         <Link href="/" className={classes.link}>Home</Link>
                         <Link href="/about" className={classes.link}>About us</Link>
-                        <Link href="/" className={classes.link}>Create your plan</Link>
+                        <Link href="/subscribe" className={classes.link}>Create your plan</Link>
                     </div>
 
                     {/* Icon burger menu */}
@@ -48,12 +48,6 @@ const Navbar = () => {
                                     <Image src={logo} alt='logo coffeeroasters' className={classes.logoImg} />
                                 </Link>
                             </div>
-                            {/* Classic links */}
-                            <div className={`${isMobileResolution ? "display-none" : classes.navLink}`}>
-                                <Link href="/" className={classes.link}>Home</Link>
-                                <Link href="/about" className={classes.link}>About us</Link>
-                                <Link href="/" className={classes.link}>Create your plan</Link>
-                            </div>
 
 
                             <div className={classes.mobileLinks}>
@@ -67,7 +61,7 @@ const Navbar = () => {
                                     burger.current.classList.toggle(classes.isActive);
                                 }}>About us</Link>
 
-                                <Link href="/" className={classes.mobileLink} onClick={() => {
+                                <Link href="/subscribe" className={classes.mobileLink} onClick={() => {
                                     toggleMenu();
                                     burger.current.classList.toggle(classes.isActive);
                                 }}>Create your plan</Link>

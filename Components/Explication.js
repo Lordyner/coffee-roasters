@@ -3,13 +3,14 @@ import classes from './Explication.module.css';
 import Link from 'next/link';
 import GlobalContext from '@/Store/GlobalContext';
 
-const Explication = () => {
+const Explication = ({ theme }) => {
 
+    const themeClass = theme === 'light' ? classes.light : classes.dark;
     const { isMobileResolution } = useContext(GlobalContext);
     return (
-        <section className={`${classes.explication} max-width`}>
+        <section className={`${classes.explication} max-width ${themeClass}`}>
             <div className={classes.wrapper}>
-                <h2>How it works</h2>
+                {theme !== 'dark' && <h2>How it works</h2>}
                 {!isMobileResolution && <div className={classes.stepsIcon}></div>}
                 <div className={classes.steps}>
                     <div className={classes.step}>
@@ -31,10 +32,12 @@ const Explication = () => {
                         <p className={classes.description}>We ship your package within 48 hours, freshly roasted. Sit back and enjoy award-winning world-class coffees curated to provide a distinct tasting experience.</p>
                     </div>
                 </div>
-                <div className={classes.buttonWrapper}>
+                {theme === 'light' &&
+                    <div className={classes.buttonWrapper}>
 
-                    <Link href="" className='primary-link'>Create your plan</Link>
-                </div>
+                        <Link href="" className='primary-link'>Create your plan</Link>
+                    </div>
+                }
             </div>
         </section>
     );

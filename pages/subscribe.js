@@ -5,6 +5,9 @@ import { getLogger } from '@/Logging/log-util'
 import { useRouter } from 'next/router'
 import Navbar from '@/Components/Navbar'
 import Footer from '@/Components/Footer'
+import Hero from '@/Components/Hero'
+import SubscribeHero from '@/Components/SubscribeHero'
+import Explication from '@/Components/Explication'
 
 
 export default function About() {
@@ -62,6 +65,10 @@ export default function About() {
             <div className={`overlay-burger-menu ${isMenuOpen ? 'isActive' : ''}`} />
             <div className='container'>
                 <Navbar />
+                <div className='content-wrapper'>
+                    <SubscribeHero />
+                    <Explication theme='dark' />
+                </div>
                 <Footer />
             </div>
 

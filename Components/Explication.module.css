@@ -1,7 +1,30 @@
 .explication {
-    padding-top: calc(37rem + var(--gap));
     padding-bottom: var(--gap);
+}
 
+.explication.dark {
+    background-color: #2C343E;
+    position: relative;
+    width: 100vw;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    border-radius: 0.625rem;
+    padding-bottom: 0;
+}
+
+.dark .steps {
+    padding-bottom: 0;
+}
+
+.dark>.wrapper {
+    padding: 0 1.5rem;
+    color: var(--light-cream);
+}
+
+.dark .description {
+    opacity: .8;
 }
 
 .wrapper {
@@ -9,6 +32,7 @@
     flex-direction: column;
     align-items: center;
 }
+
 
 .steps {
     display: flex;
@@ -51,6 +75,21 @@
 }
 
 @media screen and (min-width: 768px) {
+    .dark>.wrapper {
+        padding: 3.5625rem 2.5rem 4.375rem 2.5rem;
+    }
+
+    .explication.dark {
+
+        width: unset;
+        left: unset;
+        right: unset;
+        margin-left: unset;
+        margin-right: unset;
+        margin-inline: auto;
+        padding-bottom: 0;
+
+    }
 
     .stepIcon {
         width: 31px;
@@ -83,11 +122,6 @@
 
     }
 
-
-    .explication {
-        padding-top: calc(19rem + var(--gap));
-    }
-
     .wrapper {
         align-items: flex-start;
 
@@ -112,10 +146,6 @@
 }
 
 @media screen and (min-width: 1440px) {
-    .explication {
-        padding-top: calc(10rem + var(--gap));
-
-    }
 
     .wrapper {
         padding-left: 5.313rem;

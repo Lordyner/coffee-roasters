@@ -68,7 +68,7 @@ export default function Home() {
         <Hero />
         <Products />
         <Values />
-        <Explication />
+        <Explication theme='light' />
         <Footer />
       </div>
 

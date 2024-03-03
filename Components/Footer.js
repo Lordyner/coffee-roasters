@@ -15,8 +15,8 @@ const Footer = () => {
                 <Image src={logo} alt="logo" className={classes.logo} />
                 <div className={`${classes.links}`}>
                     <Link href="/" className={classes.link}>Home</Link>
-                    <Link href="/" className={classes.link}>About us</Link>
-                    <Link href="/" className={classes.link}>Create your plan</Link>
+                    <Link href="/about" className={classes.link}>About us</Link>
+                    <Link href="/subscribe" className={classes.link}>Create your plan</Link>
                 </div>
                 <div className={`${classes.socials}`}>
                     <Image src={facebookIcon} alt="facebook" />

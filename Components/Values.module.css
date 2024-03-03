@@ -5,6 +5,11 @@
     background-color: #2c343e;
 }
 
+.values {
+    padding-bottom: calc(37rem + var(--gap));
+
+}
+
 .valuesWrapper {
     display: flex;
     flex-direction: column;
@@ -59,12 +64,20 @@
         line-height: 3rem;
     }
 
+    .values {
+        padding-bottom: calc(19rem + var(--gap))
+    }
+
 }
 
 @media screen and (min-width: 1440px) {
     .container {
         max-height: 28rem;
         padding-top: 6.25rem;
+    }
+
+    .values {
+        padding-bottom: calc(10rem + var(--gap));
     }
 
     .valuesWrapper {

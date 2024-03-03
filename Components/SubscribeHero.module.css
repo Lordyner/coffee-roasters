@@ -1,0 +1,55 @@
+.subscribe {
+    background: url('../public/images/plan/mobile/image-hero-blackcup.jpg') no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+
+    color: var(--light-cream);
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.375rem;
+    padding: 6.3125rem 1.5rem 8.5rem 1.5rem;
+}
+
+.wrapper h1 {
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+}
+
+.description {
+    font-size: 0.938rem;
+    line-height: 1.5625rem;
+    opacity: 0.8;
+}
+
+@media screen and (min-width: 48rem) {
+    .subscribe {
+        background: url('../public/images/plan/tablet/image-hero-blackcup.jpg') no-repeat;
+        background-size: cover;
+    }
+
+    .wrapper {
+
+        align-items: flex-start;
+        text-align: left;
+        gap: 1.5rem;
+        padding: 7.9375rem 3.625rem;
+    }
+
+    .description {
+        max-width: 66%;
+    }
+
+}
+
+@media screen and (min-width: 90rem) {
+    .subscribe {
+        background: url('../public/images/plan/desktop/image-hero-blackcup.jpg') no-repeat;
+        background-size: cover;
+    }
+
+}
