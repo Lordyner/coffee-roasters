@@ -1,20 +1,29 @@
 import React, { useContext } from 'react';
 import classes from './OrderSummary.module.css';
 import GlobalContext from '@/Store/GlobalContext';
-const OrderSummary = () => {
+const OrderSummary = ({ qcmList, categorySelected, beanTypeSelected, quantitySelected, groundingMethodSelected, frequencySelected }) => {
 
-    const { selectedCategory } = useContext(GlobalContext);
-    const { selectedBeanType } = useContext(GlobalContext);
-    const { selectedQuantity } = useContext(GlobalContext);
-    const { selectedFrequency } = useContext(GlobalContext);
-    const { selectedGroundingMethod } = useContext(GlobalContext);
+    const splittedCategory = categorySelected.split(' ');
+    const splittedBeanType = beanTypeSelected.split(' ');
+    const splittedQuantity = quantitySelected.split(' ');
+    const splittedGroundingMethod = groundingMethodSelected.split(' ');
+    const splittedFrequency = frequencySelected.split(' ');
+
 
     return (
         <div className={classes.container}>
             <h5>Order summary</h5>
 
-            {/* {qcmList[0].answers[0].isSelected && <p className={classes.summary}>I drink my coffee using <span className={classes.choice}>{selectedCategory}</span>, with a <span className={classes.choice}>{selectedBeanType}</span> type of bean. <span className={classes.choice}>{selectedQuantity}</span>, send to me <span className={classes.choice}>{selectedFrequency}</span></p>}
-            {!qcmList[0].answers[0].isSelected && <p className={classes.summary}>I drink my coffee as <span className={classes.choice}>{selectedCategory}</span>, with a <span className={classes.choice}>{selectedBeanType}</span> type of bean. <span className={classes.choice}>{selectedQuantity}</span>, ground ala <span className={classes.choice}>{selectedGroundingMethod}</span>, send to me <span className={classes.choice}>{selectedFrequency}</span></p>} */}
+            {qcmList[0].answers[0].isSelected &&
+                <p className={classes.summary}>
+                    I drink my coffee using <span className={classes.choice}>{categorySelected}</span>, with a <span className={classes.choice}>{beanTypeSelected}</span> type of bean. <span className={classes.choice}>{quantitySelected}</span>, send to me <span className={classes.choice}>{frequencySelected}</span>
+                </p>
+            }
+
+            {!qcmList[0].answers[0].isSelected &&
+                <p className={classes.summary}>I drink my coffee as <span className={classes.choice}>{categorySelected}</span>, with a <span className={classes.choice}>{beanTypeSelected}</span> type of bean. <span className={classes.choice}>{quantitySelected}</span>, ground ala <span className={classes.choice}>{groundingMethodSelected}</span>, send to me <span className={classes.choice}>{frequencySelected}</span>
+                </p>
+            }
         </div>
     );
 };

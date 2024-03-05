@@ -4,10 +4,8 @@ import { useContext, useState } from 'react';
 import classes from './QCM.module.css';
 import GlobalContext from '@/Store/GlobalContext';
 
-const QCM = ({ questionIndex, qcm, nextQuestionToAnswerIndex, setNextQuestionToAnswerIndex, onClickAnswer }) => {
-    console.log(qcm);
+const QCM = ({ questionIndex, qcm, onClickAnswer }) => {
     const [isFolded, setIsFolded] = useState(qcm.folded);
-    // const [answers, setAnswers] = useState(qcm.answers);
     const [isDisabled, setIsDisabled] = useState(qcm.disabled);
 
     const { selectedCategory, setSelectedCategory } = useContext(GlobalContext);
@@ -18,16 +16,6 @@ const QCM = ({ questionIndex, qcm, nextQuestionToAnswerIndex, setNextQuestionToA
 
     const { orderSummaryTemplateA, setOrderSummaryTemplateA } = useContext(GlobalContext);
 
-
-    // const handleClickAnswer = (index) => {
-    //     selectAndUnselectAnswers(index);
-
-
-    //     // Update currentQuestionIndex ( //&& questionIndex <= nextQuestionToAnswerIndex)
-    //     if (questionIndex >= nextQuestionToAnswerIndex && questionIndex < 4) setNextQuestionToAnswerIndex(questionIndex + 1);
-
-
-    // }
     const handleClickQuestion = () => {
         // Fold or unfold the question, only if it's not disabled
         if (!isDisabled) {

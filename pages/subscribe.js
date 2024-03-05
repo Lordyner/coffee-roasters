@@ -19,20 +19,13 @@ export default function About() {
 
     /* State */
     const [screenWidth, setScreenWidth] = useState();
-
-    /* Context */
-    const { setIsMobileResolution } = useContext(GlobalContext);
-    const { setIsTabletResolution } = useContext(GlobalContext);
-    const { setIsDesktopResolution } = useContext(GlobalContext);
-    const { tabletResolution, desktopResolution } = useContext(GlobalContext);
-    const { setIsLoading } = useContext(GlobalContext);
-    const { isMenuOpen } = useContext(GlobalContext);
-
-
     const [qcmList, setQcmList] = useState([{
         title: 'How do you drink your coffee?',
         folded: false,
         disabled: false,
+        category: 'Preferences',
+        navDisabled: false,
+        currentNav: true,
         answers: [
             {
                 title: 'Capsule',
@@ -55,6 +48,9 @@ export default function About() {
         title: 'What type of coffee?',
         folded: true,
         disabled: false,
+        category: 'Bean Type',
+        navDisabled: false,
+        currentNav: false,
         answers: [
             {
                 title: 'Single Origin',
@@ -77,6 +73,9 @@ export default function About() {
         title: 'How much would you like?',
         folded: true,
         disabled: false,
+        category: 'Quantity',
+        navDisabled: false,
+        currentNav: false,
         answers: [
             {
                 title: '250g',
@@ -99,6 +98,9 @@ export default function About() {
         title: 'Want us to grind them?',
         folded: true,
         disabled: false,
+        category: 'Grind Option',
+        navDisabled: false,
+        currentNav: false,
         answers: [
             {
                 title: 'Wholebean',
@@ -121,6 +123,9 @@ export default function About() {
         title: 'How often should we deliver?',
         folded: true,
         disabled: false,
+        category: 'Deliveries',
+        navDisabled: false,
+        currentNav: false,
         answers: [
             {
                 title: 'Every week',
@@ -139,6 +144,21 @@ export default function About() {
             }
         ]
     }]);
+    const [nextQuestionToAnswerIndex, setNextQuestionToAnswerIndex] = useState(0);
+    const [categorySelected, setCategorySelected] = useState('_____');
+    const [beanTypeSelected, setBeanTypeSelected] = useState('_____');
+    const [quantitySelected, setQuantitySelected] = useState('_____');
+    const [groundingMethodSelected, setGroundingMethodSelected] = useState('_____');
+    const [frequencySelected, setFrequencySelected] = useState('_____');
+
+    /* Context */
+    const { setIsMobileResolution } = useContext(GlobalContext);
+    const { setIsTabletResolution } = useContext(GlobalContext);
+    const { setIsDesktopResolution } = useContext(GlobalContext);
+    const { tabletResolution, desktopResolution } = useContext(GlobalContext);
+    const { setIsLoading } = useContext(GlobalContext);
+    const { isMenuOpen } = useContext(GlobalContext);
+
 
     /* Router */
     const router = useRouter();
@@ -157,25 +177,73 @@ export default function About() {
     }
 
     const clickAnswerHandler = (questionIndex, answerIndex) => {
-
+        // Loop over the qcmList
         const updatedQcmList = qcmList.map((qcm, idx) => {
+            // If the current qcm is the one we want to update
             if (idx === questionIndex) {
+
                 const updatedAnswers = qcm.answers.map((ans, index) => {
-                    if (index === answerIndex) {
-                        return { ...ans, isSelected: true };
-                    } else {
-                        return { ...ans, isSelected: false };
-                    }
+                    return { ...ans, isSelected: index === answerIndex };
                 });
-                return { ...qcm, answers: updatedAnswers };
+
+                return { ...qcm, answers: updatedAnswers, currentNav: false };
+
+            } else if (idx === 3) {
+                // Disable third question, if first answer of first question is selected
+                if (questionIndex === 0 && answerIndex === 0) {
+                    return { ...qcm, disabled: true, navDisabled: true, currentNav: idx === questionIndex + 1 && !qcm.disabled };
+                } else if (questionIndex === 0 && answerIndex !== 0) {
+                    return { ...qcm, disabled: false, navDisabled: false, currentNav: idx === questionIndex + 1 && !qcm.disabled };
+                } else {
+                    return { ...qcm, currentNav: idx === questionIndex + 1 && !qcm.disabled };
+                }
             }
-            if (idx === 0) {
-                return { ...qcm, disabled: true };
-            }
+
+            return { ...qcm, currentNav: idx === questionIndex + 1 };
 
         });
-
+        // Loop over the qcmList and set the selected category, bean type, quantity, grounding method and frequency
+        updatedQcmList.forEach((qcm, idx) => {
+            switch (qcm.category) {
+                case 'Preferences':
+                    qcm.answers.forEach((ans, index) => {
+                        if (ans.isSelected) {
+                            setCategorySelected(ans.title);
+                        }
+                    });
+                    break;
+                case 'Bean Type':
+                    qcm.answers.forEach((ans, index) => {
+                        if (ans.isSelected) {
+                            setBeanTypeSelected(ans.title);
+                        }
+                    });
+                    break;
+                case 'Quantity':
+                    qcm.answers.forEach((ans, index) => {
+                        if (ans.isSelected) {
+                            setQuantitySelected(ans.title);
+                        }
+                    });
+                    break;
+                case 'Grind Option':
+                    qcm.answers.forEach((ans, index) => {
+                        if (ans.isSelected) {
+                            setGroundingMethodSelected(ans.title);
+                        }
+                    });
+                    break;
+                case 'Deliveries':
+                    qcm.answers.forEach((ans, index) => {
+                        if (ans.isSelected) {
+                            setFrequencySelected(ans.title);
+                        }
+                    });
+                    break;
+            }
+        });
         setQcmList(updatedQcmList);
+
     }
 
     useEffect(() => {
@@ -204,9 +272,8 @@ export default function About() {
                 <div className='content-wrapper'>
                     <SubscribeHero />
                     <Explication theme='dark' />
-                    <QCMContainer qcmList={qcmList} onClickAnswer={clickAnswerHandler} />
-                    <OrderSummary />
-
+                    <QCMContainer qcmList={qcmList} nextQuestionToAnswerIndex={nextQuestionToAnswerIndex} onClickAnswer={clickAnswerHandler} />
+                    <OrderSummary qcmList={qcmList} categorySelected={categorySelected} beanTypeSelected={beanTypeSelected} quantitySelected={quantitySelected} groundingMethodSelected={groundingMethodSelected} frequencySelected={frequencySelected} />
                 </div>
                 <Footer />
             </div>

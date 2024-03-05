@@ -17,6 +17,11 @@
     opacity: 1;
 }
 
+.item.disabled {
+    opacity: .2;
+    pointer-events: none;
+}
+
 
 
 .item:first-of-type .number {
