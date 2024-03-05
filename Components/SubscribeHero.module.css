@@ -26,7 +26,7 @@
     opacity: 0.8;
 }
 
-@media screen and (min-width: 48rem) {
+@media screen and (min-width: 760px) {
     .subscribe {
         background: url('../public/images/plan/tablet/image-hero-blackcup.jpg') no-repeat;
         background-size: cover;
@@ -46,7 +46,7 @@
 
 }
 
-@media screen and (min-width: 90rem) {
+@media screen and (min-width: 1440px) {
     .subscribe {
         background: url('../public/images/plan/desktop/image-hero-blackcup.jpg') no-repeat;
         background-size: cover;

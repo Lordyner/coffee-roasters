@@ -18,9 +18,20 @@ export function GlobalContextProvider(props) {
     const [isMonthly, setIsMonthly] = useState(true);
     const [animatePrice, setAnimatePrice] = useState(false);
 
+    const [selectedCategory, setSelectedCategory] = useState("_____");
+    const [selectedBeanType, setSelectedBeanType] = useState("_____");
+    const [selectedQuantity, setSelectedQuantity] = useState("_____");
+    const [selectedGroundingMethod, setSelectedGroundingMethod] = useState("_____");
+    const [selectedFrequency, setSelectedFrequency] = useState("_____");
+
+    const [orderSummaryTemplateA, setOrderSummaryTemplateA] = useState(`“I drink my coffee using ${selectedCategory}, with a ${selectedBeanType} type of bean. ${selectedQuantity}, send to me ${selectedFrequency}`);
+    const [orderSummaryTemplateB, setOrderSummaryTemplateB] = useState(`“I drink my coffee as ${selectedCategory}, with a ${selectedBeanType} type of bean. ${selectedQuantity}, groud ala ${selectedGroundingMethod}, send to me ${selectedFrequency}`);
+
+
     const [mobileResolution] = useState(320);
     const [tabletResolution] = useState(768);
     const [desktopResolution] = useState(1440);
+
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -48,7 +59,14 @@ export function GlobalContextProvider(props) {
             mobileResolution, tabletResolution, desktopResolution,
             toggleMenu,
             isMonthly, setIsMonthly,
-            animatePrice, setAnimatePrice
+            animatePrice, setAnimatePrice,
+            orderSummaryTemplateA, setOrderSummaryTemplateA,
+            orderSummaryTemplateB, setOrderSummaryTemplateB,
+            selectedCategory, setSelectedCategory,
+            selectedBeanType, setSelectedBeanType,
+            selectedQuantity, setSelectedQuantity,
+            selectedGroundingMethod, setSelectedGroundingMethod,
+            selectedFrequency, setSelectedFrequency
 
         }}>
             {props.children}

@@ -1,0 +1,29 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    padding: 2rem 1.5rem;
+    background-color: #2C343E;
+    border-radius: 0.625rem;
+}
+
+.container h5 {
+    font-size: 1rem;
+    line-height: 1.625rem;
+    color: #fff;
+    opacity: .5;
+    text-transform: uppercase;
+    font-family: 'BarlowRegular';
+    font-weight: normal;
+}
+
+.summary {
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+    font-family: 'FrauncesBlack';
+    color: #fff;
+}
+
+.choice {
+    color: var(--primary-color);
+}
