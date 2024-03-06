@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import classes from './OrderSummary.module.css';
 import GlobalContext from '@/Store/GlobalContext';
-import Link from 'next/link';
 const OrderSummary = ({ qcmList, categorySelected, beanTypeSelected, quantitySelected, groundingMethodSelected, frequencySelected }) => {
 
     const splittedCategory = categorySelected.split(' ');
@@ -28,7 +27,6 @@ const OrderSummary = ({ qcmList, categorySelected, beanTypeSelected, quantitySel
                 }
             </div>
             <div className={classes.buttonWrapper}>
-
                 <button>Create my plan!</button>
             </div>
         </div>

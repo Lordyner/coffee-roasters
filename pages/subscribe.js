@@ -272,8 +272,15 @@ export default function About() {
                 <div className='content-wrapper'>
                     <SubscribeHero />
                     <Explication theme='dark' />
-                    <QCMContainer qcmList={qcmList} nextQuestionToAnswerIndex={nextQuestionToAnswerIndex} onClickAnswer={clickAnswerHandler} />
-                    <OrderSummary qcmList={qcmList} categorySelected={categorySelected} beanTypeSelected={beanTypeSelected} quantitySelected={quantitySelected} groundingMethodSelected={groundingMethodSelected} frequencySelected={frequencySelected} />
+                    <QCMContainer
+                        qcmList={qcmList}
+                        nextQuestionToAnswerIndex={nextQuestionToAnswerIndex}
+                        categorySelected={categorySelected}
+                        beanTypeSelected={beanTypeSelected}
+                        quantitySelected={quantitySelected}
+                        groundingMethodSelected={groundingMethodSelected}
+                        frequencySelected={frequencySelected}
+                        onClickAnswer={clickAnswerHandler} />
                     <Footer />
                 </div>
             </div>

@@ -50,3 +50,10 @@
 .number.first {
     color: var(--primary-color);
 }
+
+@media screen and (min-width: 90rem) {
+    .navigation {
+        grid-area: navigation;
+    }
+
+}
