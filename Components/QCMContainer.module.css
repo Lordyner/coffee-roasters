@@ -9,8 +9,8 @@
     .container {
         display: grid;
         grid-template-columns: min-content 1fr;
-        max-width: 69.375rem;
-        margin-inline: auto;
+        padding-left: 5.313rem;
+        padding-right: 5.313rem;
         gap: 5.5rem;
     }
 

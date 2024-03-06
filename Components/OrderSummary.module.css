@@ -1,6 +1,12 @@
 .container {
     display: flex;
     flex-direction: column;
+    gap: 3.5rem;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
     gap: .5rem;
     padding: 2rem 1.5rem;
     background-color: #2C343E;
@@ -26,4 +32,26 @@
 
 .choice {
     color: var(--primary-color);
+}
+
+.buttonWrapper {
+    display: flex;
+    justify-content: center;
+
+}
+
+@media (min-width: 48rem) {
+    .container {
+        gap: 2.5rem;
+    }
+
+    .wrapper {
+        padding: 1.6875rem 2.75rem;
+    }
+}
+
+@media (min-width: 90rem) {
+    .container {
+        gap: 3.5rem;
+    }
 }

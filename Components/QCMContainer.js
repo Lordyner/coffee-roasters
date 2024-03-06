@@ -7,7 +7,7 @@ const QCMContainer = ({ qcmList, onClickAnswer, nextQuestionToAnswerIndex }) => 
 
     const { isDesktopResolution } = useContext(GlobalContext);
     return (
-        <div className={`${classes.container}`}>
+        <div className={`${classes.container} max-width`}>
             {isDesktopResolution && <OrderNavigation qcmList={qcmList} nextQuestionToAnswerIndex={nextQuestionToAnswerIndex} />}
             <div className={classes.qcmContainer}>
                 {qcmList.map((qcm, index) => (

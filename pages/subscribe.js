@@ -274,8 +274,8 @@ export default function About() {
                     <Explication theme='dark' />
                     <QCMContainer qcmList={qcmList} nextQuestionToAnswerIndex={nextQuestionToAnswerIndex} onClickAnswer={clickAnswerHandler} />
                     <OrderSummary qcmList={qcmList} categorySelected={categorySelected} beanTypeSelected={beanTypeSelected} quantitySelected={quantitySelected} groundingMethodSelected={groundingMethodSelected} frequencySelected={frequencySelected} />
+                    <Footer />
                 </div>
-                <Footer />
             </div>
 
 

@@ -363,8 +363,7 @@ a.primary-link:disabled {
     }
 
     a.primary-link-light,
-    a.primary-link-dark,
-    button {
+    a.primary-link-dark {
         letter-spacing: .125rem;
     }
 
