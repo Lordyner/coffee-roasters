@@ -40,6 +40,11 @@
         padding: 7.9375rem 3.625rem;
     }
 
+    .wrapper h1 {
+        font-size: 3rem;
+        line-height: 3rem;
+    }
+
     .description {
         max-width: 66%;
     }
@@ -50,6 +55,21 @@
     .subscribe {
         background: url('../public/images/plan/desktop/image-hero-blackcup.jpg') no-repeat;
         background-size: cover;
+        width: 100%;
+    }
+
+    .wrapper {
+        gap: 2rem;
+    }
+
+    .wrapper h1 {
+        font-size: 4.5rem;
+        line-height: 4.5rem;
+    }
+
+    .description {
+        font-size: 1rem;
+        max-width: 45%;
     }
 
 }

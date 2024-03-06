@@ -57,7 +57,7 @@
 
         /* Padding */
         --sidePadding: 2.5rem;
-        --topPadding: 2rem;
+        --topPadding: 2.5rem;
         --botPadding: 4.5rem;
         --gap: 9rem;
     }
@@ -83,6 +83,7 @@
         /* Padding */
         --sidePadding: 5rem;
         --gap: 12.5rem;
+        --topPadding: 2.723rem;
 
     }
 }
