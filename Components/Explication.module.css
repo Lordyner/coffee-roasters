@@ -14,9 +14,7 @@
     padding-bottom: 0;
 }
 
-.dark .steps {
-    padding-bottom: 0;
-}
+
 
 .dark>.wrapper {
     padding: 0 1.5rem;
@@ -79,17 +77,10 @@
         padding: 3.5625rem 2.5rem 4.375rem 2.5rem;
     }
 
-    .explication.dark {
-
-        width: unset;
-        left: unset;
-        right: unset;
-        margin-left: unset;
-        margin-right: unset;
-        margin-inline: auto;
+    .dark .steps {
         padding-bottom: 0;
-
     }
+
 
     .stepIcon {
         width: 31px;
@@ -114,7 +105,7 @@
         --_left_offset: 35px;
         content: '';
         position: relative;
-        width: calc(100% + 3.5rem - var(--_left_offset));
+        width: calc(100% + 0.625rem - var(--_left_offset));
         top: 3.5rem;
         left: var(--_left_offset);
         border: 1px solid var(--tertiary-color);
@@ -133,7 +124,7 @@
         align-items: start;
         padding-bottom: 2.75rem;
         padding-top: 0;
-
+        gap: 0.625rem;
     }
 
 
@@ -152,6 +143,11 @@
         padding-right: 5.313rem;
     }
 
+    .dark>.wrapper {
+        padding: 5.3125rem 6.25rem 9.375rem 6.25rem;
+    }
+
+
     .steps {
         gap: 5.938rem;
         padding-top: 2.5rem;
@@ -169,6 +165,17 @@
 
     .stepIcon {
         margin-bottom: 1.688rem;
+    }
+
+
+    .explication.dark {
+        width: 100%;
+        left: unset;
+        right: unset;
+        margin-left: unset;
+        margin-right: unset;
+        margin-inline: auto;
+        padding-bottom: 0;
 
     }
 }

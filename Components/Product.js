@@ -2,7 +2,6 @@ import React from 'react';
 import classes from './Product.module.css';
 import Image from 'next/image';
 const Product = ({ title, description, image, alt }) => {
-    console.log(image)
     return (
         <div className={classes.product}>
             <Image src={image} alt={alt} className={classes.packageImg} />
