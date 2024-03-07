@@ -60,4 +60,8 @@
         justify-content: flex-end;
 
     }
+
+    .wrapper {
+        padding: 1.6875rem 4rem;
+    }
 }

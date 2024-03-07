@@ -22,7 +22,7 @@
 
 .header {
     display: grid;
-    grid-template-columns: 65% 35%;
+    grid-template-columns: 70% 30%;
     align-items: center;
 }
 
@@ -85,10 +85,28 @@
         padding: 2rem 1.625rem 5.25rem 1.625rem;
         gap: 1.5rem;
     }
+
+    .header h3 {
+        font-size: 2rem;
+        line-height: 3rem;
+    }
 }
 
 @media (min-width: 1440px) {
     .qcm {
         cursor: pointer;
+    }
+
+    .header h3 {
+        font-size: 2.5rem;
+        line-height: 3rem;
+    }
+
+    .header {
+        grid-template-columns: max-content 1fr;
+    }
+
+    .answers {
+        gap: 1.4375rem;
     }
 }
