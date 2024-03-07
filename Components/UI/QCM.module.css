@@ -53,6 +53,8 @@
     background-color: #F4F1EB;
     color: var(--secondary-color);
     border-radius: 10px;
+    font-size: 1rem;
+    line-height: 1.625rem;
 }
 
 .answer:hover {
@@ -77,8 +79,14 @@
 
 @media (min-width: 768px) {
     .answers {
-        flex-direction: row;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+
         gap: 0.625rem;
+    }
+
+    .qcm {
+        gap: 2.5rem;
     }
 
     .answer {
@@ -95,6 +103,8 @@
 @media (min-width: 1440px) {
     .qcm {
         cursor: pointer;
+        gap: 3.5rem;
+
     }
 
     .header h3 {
@@ -108,5 +118,10 @@
 
     .answers {
         gap: 1.4375rem;
+    }
+
+    .answer {
+        padding-left: 1.75rem;
+        padding-right: 1.75rem;
     }
 }

@@ -9,13 +9,15 @@ const QCMContainer = ({ qcmList, onClickAnswer, nextQuestionToAnswerIndex, categ
     const { isDesktopResolution } = useContext(GlobalContext);
     return (
         <div className={`${classes.container} max-width`}>
-            {isDesktopResolution && <OrderNavigation qcmList={qcmList} nextQuestionToAnswerIndex={nextQuestionToAnswerIndex} />}
-            <div className={classes.qcmContainer}>
-                {qcmList.map((qcm, index) => (
-                    <QCM key={index} questionIndex={index} qcm={qcm} onClickAnswer={onClickAnswer} />
-                ))}
+            <div className={classes.wrapper}>
+                {isDesktopResolution && <OrderNavigation qcmList={qcmList} nextQuestionToAnswerIndex={nextQuestionToAnswerIndex} />}
+                <div className={classes.qcmContainer}>
+                    {qcmList.map((qcm, index) => (
+                        <QCM key={index} questionIndex={index} qcm={qcm} onClickAnswer={onClickAnswer} />
+                    ))}
+                </div>
+                <OrderSummary qcmList={qcmList} categorySelected={categorySelected} beanTypeSelected={beanTypeSelected} quantitySelected={quantitySelected} groundingMethodSelected={groundingMethodSelected} frequencySelected={frequencySelected} />
             </div>
-            <OrderSummary qcmList={qcmList} categorySelected={categorySelected} beanTypeSelected={beanTypeSelected} quantitySelected={quantitySelected} groundingMethodSelected={groundingMethodSelected} frequencySelected={frequencySelected} />
 
         </div>
     );

@@ -42,8 +42,17 @@
     font-size: 1.5rem;
     line-height: 2rem;
     font-family: 'FrauncesBlack';
-    color: var(--grey);
+
     opacity: .4;
+}
+
+.number {
+    color: var(--grey);
+
+}
+
+.text {
+    color: var(--secondary-color);
 }
 
 
