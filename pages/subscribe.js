@@ -10,6 +10,7 @@ import SubscribeHero from '@/Components/SubscribeHero'
 import Explication from '@/Components/Explication'
 import QCMContainer from '@/Components/QCMContainer'
 import OrderSummary from '@/Components/OrderSummary'
+import SummaryModal from '@/Components/SummaryModal'
 
 
 export default function About() {
@@ -150,7 +151,9 @@ export default function About() {
     const [quantitySelected, setQuantitySelected] = useState('_____');
     const [groundingMethodSelected, setGroundingMethodSelected] = useState('_____');
     const [frequencySelected, setFrequencySelected] = useState('_____');
+    const [orderSummary, setOrderSummary] = useState(``);
 
+    const [isSummaryModalOpen, setIsSummaryModalOpen] = useState(false);
     /* Context */
     const { setIsMobileResolution } = useContext(GlobalContext);
     const { setIsTabletResolution } = useContext(GlobalContext);
@@ -158,7 +161,7 @@ export default function About() {
     const { tabletResolution, desktopResolution } = useContext(GlobalContext);
     const { setIsLoading } = useContext(GlobalContext);
     const { isMenuOpen } = useContext(GlobalContext);
-
+    const { modalRef } = useContext(GlobalContext);
 
     /* Router */
     const router = useRouter();
@@ -174,6 +177,10 @@ export default function About() {
         setIsMobileResolution(isMobile);
         setIsTabletResolution(isTablet);
         setIsDesktopResolution(isDesktop);
+    }
+
+    const createMyPlanClickHandler = () => {
+        modalRef.current.showModal();
     }
 
     const clickAnswerHandler = (questionIndex, answerIndex) => {
@@ -246,6 +253,8 @@ export default function About() {
 
     }
 
+
+
     useEffect(() => {
         // Handle menu display
         handleMenuDisplay();
@@ -280,9 +289,11 @@ export default function About() {
                         quantitySelected={quantitySelected}
                         groundingMethodSelected={groundingMethodSelected}
                         frequencySelected={frequencySelected}
-                        onClickAnswer={clickAnswerHandler} />
+                        onClickAnswer={clickAnswerHandler}
+                        onButtonClick={createMyPlanClickHandler} />
                     <Footer />
                 </div>
+                <SummaryModal qcmList={qcmList} categorySelected={categorySelected} beanTypeSelected={beanTypeSelected} quantitySelected={quantitySelected} frequencySelected={frequencySelected} groundingMethodSelected={groundingMethodSelected} price="1000.00" modalOpened={isSummaryModalOpen} setModalOpened={setIsSummaryModalOpen} />
             </div>
 
 

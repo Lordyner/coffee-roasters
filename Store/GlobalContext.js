@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect } from 'react';
+import React, { createContext, useState, useEffect } from 'react';
 
 const GlobalContext = createContext();
 
@@ -32,6 +32,7 @@ export function GlobalContextProvider(props) {
     const [tabletResolution] = useState(768);
     const [desktopResolution] = useState(1440);
 
+    const modalRef = React.useRef();
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -66,7 +67,8 @@ export function GlobalContextProvider(props) {
             selectedBeanType, setSelectedBeanType,
             selectedQuantity, setSelectedQuantity,
             selectedGroundingMethod, setSelectedGroundingMethod,
-            selectedFrequency, setSelectedFrequency
+            selectedFrequency, setSelectedFrequency,
+            modalRef
 
         }}>
             {props.children}

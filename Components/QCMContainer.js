@@ -4,7 +4,7 @@ import QCM from './UI/QCM';
 import GlobalContext from '@/Store/GlobalContext';
 import OrderNavigation from './UI/OrderNavigation';
 import OrderSummary from './OrderSummary';
-const QCMContainer = ({ qcmList, onClickAnswer, nextQuestionToAnswerIndex, categorySelected, beanTypeSelected, quantitySelected, groundingMethodSelected, frequencySelected }) => {
+const QCMContainer = ({ qcmList, onClickAnswer, nextQuestionToAnswerIndex, categorySelected, beanTypeSelected, quantitySelected, groundingMethodSelected, frequencySelected, onButtonClick, }) => {
 
     const { isDesktopResolution } = useContext(GlobalContext);
     return (
@@ -16,7 +16,7 @@ const QCMContainer = ({ qcmList, onClickAnswer, nextQuestionToAnswerIndex, categ
                         <QCM key={index} questionIndex={index} qcm={qcm} onClickAnswer={onClickAnswer} />
                     ))}
                 </div>
-                <OrderSummary qcmList={qcmList} categorySelected={categorySelected} beanTypeSelected={beanTypeSelected} quantitySelected={quantitySelected} groundingMethodSelected={groundingMethodSelected} frequencySelected={frequencySelected} />
+                <OrderSummary qcmList={qcmList} categorySelected={categorySelected} beanTypeSelected={beanTypeSelected} quantitySelected={quantitySelected} groundingMethodSelected={groundingMethodSelected} frequencySelected={frequencySelected} onButtonClick={onButtonClick} />
             </div>
 
         </div>

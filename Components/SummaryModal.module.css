@@ -1,0 +1,47 @@
+.dialog {
+    border: 0;
+    border-radius: 0.625rem;
+    max-width: 33.75rem;
+    margin: auto;
+}
+
+.dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.header {
+    padding: 1.75rem 1.5rem;
+    background-color: var(--secondary-color);
+}
+
+.header h2 {
+    font-size: 1.75rem;
+    line-height: 2rem;
+    color: var(--light-cream);
+}
+
+.body {
+    padding: 2.5rem 1.5rem 1.5rem 1.5rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+}
+
+.choice {
+    color: var(--primary-color);
+}
+
+.summary {
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+    font-family: 'FrauncesBlack';
+    color: var(--grey);
+}
+
+.confirmation {
+    color: var(--secondary-color);
+    font-size: 0.9375rem;
+    line-height: 1.5625rem;
+}

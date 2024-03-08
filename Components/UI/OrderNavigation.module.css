@@ -17,6 +17,8 @@
     opacity: 1;
 }
 
+
+
 .item.disabled {
     opacity: .2;
     pointer-events: none;
@@ -44,6 +46,11 @@
     font-family: 'FrauncesBlack';
 
     opacity: .4;
+}
+
+.item:hover .number,
+.item:hover .text {
+    opacity: .6;
 }
 
 .number {

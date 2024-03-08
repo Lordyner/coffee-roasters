@@ -201,6 +201,7 @@ button {
     color: var(--light-cream);
 }
 
+button:hover,
 a.primary-link:hover {
     background-color: #66D2CF;
 }

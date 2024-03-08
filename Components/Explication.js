@@ -35,7 +35,7 @@ const Explication = ({ theme }) => {
                 {theme === 'light' &&
                     <div className={classes.buttonWrapper}>
 
-                        <Link href="" className='primary-link'>Create your plan</Link>
+                        <Link href="/subscribe" className='primary-link'>Create your plan</Link>
                     </div>
                 }
             </div>
