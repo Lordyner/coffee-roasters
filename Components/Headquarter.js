@@ -4,7 +4,9 @@ import Image from 'next/image';
 
 const Headquarter = ({ title, adress, city, code, phoneNumber, icon, alt }) => {
     return (
-        <div className={classes.headquarter}>
+        <div
+
+            className={classes.headquarter}>
             <Image src={icon} alt={alt} />
             <div className={classes.text}>
                 <h3>{title}</h3>

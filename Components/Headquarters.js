@@ -4,10 +4,24 @@ import Headquarter from './Headquarter';
 import illustrationUK from '../public/images/about/desktop/illustration-uk.svg';
 import illustrationAustralia from '../public/images/about/desktop/illustration-australia.svg';
 import illustrationCanada from '../public/images/about/desktop/illustration-canada.svg';
+import { motion } from "framer-motion";
 
 const Headquarters = () => {
     return (
-        <section className={`${classes.headquarters} max-width`}>
+        <motion.section
+            initial={{
+                opacity: 0,
+                x: 50
+            }}
+            whileInView={{
+                opacity: 1,
+                x: 0, // Slide in to its original position
+                transition: {
+                    duration: 1 // Animation duration
+                }
+            }}
+            viewport={{ once: true }}
+            className={`${classes.headquarters} max-width`}>
             <div className={classes.container}>
                 <h2>Our headquarters</h2>
                 <div className={classes.wrapper}>
@@ -16,7 +30,7 @@ const Headquarters = () => {
                     <Headquarter title='Australia' adress='36 Swanston Street' city='Kewell' code='Victoria' phoneNumber='+61 4 9928 3629' icon={illustrationAustralia} alt='Australia' />
                 </div>
             </div>
-        </section>
+        </motion.section>
     );
 };
 

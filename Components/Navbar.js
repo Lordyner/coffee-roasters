@@ -29,8 +29,7 @@ const Navbar = () => {
                     duration: 1 // Animation duration
                 }
             }}
-
-
+            viewport={{ once: true }}
             className={`${classes.header} max-width`}>
             <nav className={classes.navbar}>
                 <div className={classes.navWrapper}>

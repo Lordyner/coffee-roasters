@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { motion } from "framer-motion";
 import classes from './Footer.module.css';
 import Image from 'next/image';
 import GlobalContext from '@/Store/GlobalContext';
@@ -10,7 +11,22 @@ import instagramIcon from '@/public/images/shared/desktop/icon-instagram.svg'
 
 const Footer = () => {
     return (
-        <footer className={`${classes.footer} max-width`}>
+
+        <motion.footer
+            initial={{
+                opacity: 0,
+                x: -50
+            }}
+            whileInView={{
+                opacity: 1,
+                x: 0, // Slide in to its original position
+                transition: {
+                    duration: 1 // Animation duration
+                }
+            }}
+            viewport={{ once: true }}
+
+            className={`${classes.footer} max-width`}>
             <div className={`${classes.wrapper}`}>
                 <Image src={logo} alt="logo" className={classes.logo} />
                 <div className={`${classes.links}`}>
@@ -24,7 +40,7 @@ const Footer = () => {
                     <Image src={instagramIcon} alt="instagram" />
                 </div>
             </div>
-        </footer>
+        </motion.footer>
     );
 };
 

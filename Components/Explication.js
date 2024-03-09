@@ -23,6 +23,7 @@ const Explication = ({ theme }) => {
             }}
             viewport={{ once: true }}
             className={`${classes.explication} max-width ${themeClass}`}>
+
             <div className={classes.wrapper}>
                 {theme !== 'dark' && <h2>How it works</h2>}
                 {!isMobileResolution && <div className={classes.stepsIcon}></div>}

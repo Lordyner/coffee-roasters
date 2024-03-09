@@ -36,7 +36,7 @@ const Values = () => {
                     <Value icon={iconTruck} alt="Truck" title="Free shipping" description="We cover the cost and coffee is delivered fast. Peak freshness: guaranteed." />
                 </div>
             </div>
-        </motion.section>
+        </motion.section >
     );
 };
 

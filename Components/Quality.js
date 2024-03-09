@@ -1,4 +1,6 @@
 import React, { useContext } from 'react';
+import { motion } from "framer-motion";
+
 import classes from './Quality.module.css';
 import Image from 'next/image';
 import imageQualityMobile from '@/public/images/about/mobile/image-quality.jpg';
@@ -11,7 +13,20 @@ const Quality = () => {
     const { isMobileResolution } = useContext(GlobalContext);
     const { isTabletResolution } = useContext(GlobalContext);
     return (
-        <section className={`${classes.quality} max-width`}>
+        <motion.section
+            initial={{
+                opacity: 0,
+                x: -50
+            }}
+            whileInView={{
+                opacity: 1,
+                x: 0, // Slide in to its original position
+                transition: {
+                    duration: 1 // Animation duration
+                }
+            }}
+            viewport={{ once: true }}
+            className={`${classes.quality} max-width`}>
             <div className={classes.wrapper}>
 
 
@@ -22,7 +37,7 @@ const Quality = () => {
                 <Image src={isMobileResolution ? imageQualityMobile : isTabletResolution ? imageQualityTablet : imageQualityDesktop} className={classes.qualityCoffeeImg} alt='coffee with a flower draw inside' />
 
             </div>
-        </section>
+        </motion.section>
     );
 };
 

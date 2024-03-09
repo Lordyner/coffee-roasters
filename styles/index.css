@@ -134,6 +134,7 @@ body {
 
 .container {
     padding: var(--topPadding) var(--sidePadding) var(--botPadding) var(--sidePadding);
+    overflow-x: hidden;
 }
 
 .content-wrapper {

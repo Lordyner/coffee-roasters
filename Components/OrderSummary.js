@@ -1,6 +1,8 @@
 import React, { useContext } from 'react';
 import classes from './OrderSummary.module.css';
 import GlobalContext from '@/Store/GlobalContext';
+import { motion } from "framer-motion";
+
 const OrderSummary = ({ qcmList, categorySelected, beanTypeSelected, quantitySelected, groundingMethodSelected, frequencySelected, onButtonClick }) => {
 
     const splittedCategory = categorySelected.split(' ');
@@ -10,7 +12,20 @@ const OrderSummary = ({ qcmList, categorySelected, beanTypeSelected, quantitySel
     const splittedFrequency = frequencySelected.split(' ');
 
     return (
-        <div className={classes.container}>
+        <motion.div
+            initial={{
+                opacity: 0,
+                x: 50
+            }}
+            whileInView={{
+                opacity: 1,
+                x: 0, // Slide in to its original position
+                transition: {
+                    duration: 1 // Animation duration
+                }
+            }}
+            viewport={{ once: true }}
+            className={classes.container}>
             <div className={classes.wrapper}>
                 <h5>Order summary</h5>
                 {qcmList[0].answers[0].isSelected &&
@@ -27,7 +42,7 @@ const OrderSummary = ({ qcmList, categorySelected, beanTypeSelected, quantitySel
             <div className={classes.buttonWrapper}>
                 <button onClick={onButtonClick}>Create my plan!</button>
             </div>
-        </div>
+        </motion.div>
     );
 };
 

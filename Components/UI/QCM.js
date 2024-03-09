@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { useContext, useState } from 'react';
 import classes from './QCM.module.css';
 import GlobalContext from '@/Store/GlobalContext';
+import { motion } from "framer-motion";
 
 const QCM = ({ questionIndex, qcm, onClickAnswer }) => {
     const [isFolded, setIsFolded] = useState(qcm.folded);
@@ -24,7 +25,21 @@ const QCM = ({ questionIndex, qcm, onClickAnswer }) => {
     }
 
     return (
-        <div className={`${classes.qcm} ${qcm.disabled ? classes.disabled : ''}`}>
+        <motion.div
+            initial={{
+                opacity: 0,
+                x: questionIndex % 2 === 0 ? 50 : -50
+            }}
+            whileInView={{
+                opacity: 1,
+                x: 0, // Slide in to its original position
+                transition: {
+                    duration: 1 // Animation duration
+                }
+            }}
+            viewport={{ once: true }}
+
+            className={`${classes.qcm} ${qcm.disabled ? classes.disabled : ''}`}>
             <div className={classes.header} onClick={() => handleClickQuestion()}>
 
                 <h3>{qcm.title}</h3>
@@ -38,7 +53,7 @@ const QCM = ({ questionIndex, qcm, onClickAnswer }) => {
                     </div>
                 ))}
             </div>
-        </div>
+        </motion.div>
     );
 };
 
