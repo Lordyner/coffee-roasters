@@ -2,13 +2,27 @@ import React, { useContext } from 'react';
 import classes from './Explication.module.css';
 import Link from 'next/link';
 import GlobalContext from '@/Store/GlobalContext';
+import { motion } from "framer-motion";
 
 const Explication = ({ theme }) => {
 
     const themeClass = theme === 'light' ? classes.light : classes.dark;
     const { isMobileResolution } = useContext(GlobalContext);
     return (
-        <section className={`${classes.explication} max-width ${themeClass}`}>
+        <motion.section
+            initial={{
+                opacity: 0,
+                x: 50
+            }}
+            whileInView={{
+                opacity: 1,
+                x: 0, // Slide in to its original position
+                transition: {
+                    duration: 1 // Animation duration
+                }
+            }}
+            viewport={{ once: true }}
+            className={`${classes.explication} max-width ${themeClass}`}>
             <div className={classes.wrapper}>
                 {theme !== 'dark' && <h2>How it works</h2>}
                 {!isMobileResolution && <div className={classes.stepsIcon}></div>}
@@ -39,7 +53,7 @@ const Explication = ({ theme }) => {
                     </div>
                 }
             </div>
-        </section>
+        </motion.section>
     );
 };
 

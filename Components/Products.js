@@ -1,5 +1,6 @@
 import React from 'react';
 import classes from './Products.module.css';
+import { motion } from "framer-motion";
 
 import granEspressoImg from '@/public/images/home/desktop/image-gran-espresso.png';
 import planaltoImg from '@/public/images/home/desktop/image-planalto.png';
@@ -38,7 +39,20 @@ const Products = () => {
         }
     ]
     return (
-        <section className={`${classes.products} max-width`}>
+        <motion.section
+            initial={{
+                opacity: 0,
+                x: 50
+            }}
+            whileInView={{
+                opacity: 1,
+                x: 0, // Slide in to its original position
+                transition: {
+                    duration: 1 // Animation duration
+                }
+            }}
+            viewport={{ once: true }}
+            className={`${classes.products} max-width`}>
             <h2 className={classes.bigTitle}>our collection</h2>
             <div className={classes.productsWrapper}>
                 {products.map((product, index) => {
@@ -47,7 +61,7 @@ const Products = () => {
                     )
                 })}
             </div>
-        </section>
+        </motion.section>
     );
 };
 

@@ -4,10 +4,26 @@ import iconCoffeeBean from '../public/images/home/desktop/icon-coffee-bean.svg';
 import iconGift from '../public/images/home/desktop/icon-gift.svg';
 import iconTruck from '../public/images/home/desktop/icon-truck.svg';
 import Value from './Value';
+import { motion } from "framer-motion";
 
 const Values = () => {
     return (
-        <section className={`${classes.values} max-width`}>
+        <motion.section
+
+            initial={{
+                opacity: 0,
+                x: -50
+            }}
+            whileInView={{
+                opacity: 1,
+                x: 0, // Slide in to its original position
+                transition: {
+                    duration: 1 // Animation duration
+                }
+            }}
+            viewport={{ once: true }}
+
+            className={`${classes.values} max-width`}>
             <div className={classes.container}>
                 <div className={classes.text}>
 
@@ -20,7 +36,7 @@ const Values = () => {
                     <Value icon={iconTruck} alt="Truck" title="Free shipping" description="We cover the cost and coffee is delivered fast. Peak freshness: guaranteed." />
                 </div>
             </div>
-        </section>
+        </motion.section>
     );
 };
 

@@ -2,10 +2,25 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import classes from './Hero.module.css';
+import { motion } from "framer-motion";
+
 const Hero = () => {
 
     return (
-        <div className={`${classes.hero} max-width`}>
+        <motion.div
+            initial={{
+                opacity: 0,
+                x: -50
+            }}
+            whileInView={{
+                opacity: 1,
+                x: 0, // Slide in to its original position
+                transition: {
+                    duration: 1 // Animation duration
+                }
+            }}
+            viewport={{ once: true }}
+            className={`${classes.hero} max-width`}>
             <div className={`${classes.wrapper} `}>
 
                 <div className={classes.text}>
@@ -14,7 +29,7 @@ const Hero = () => {
                 </div>
                 <Link href="/subscribe" className='primary-link'>Create your plan</Link>
             </div>
-        </div>
+        </motion.div>
     );
 };
 

@@ -4,6 +4,7 @@ import classes from './Navbar.module.css'
 import GlobalContext from '@/Store/GlobalContext';
 import Link from 'next/link';
 import logo from '@/public/images/shared/desktop/logo.svg';
+import { motion } from "framer-motion";
 
 
 const Navbar = () => {
@@ -16,7 +17,21 @@ const Navbar = () => {
 
 
     return (
-        <header className={`${classes.header} max-width`}>
+        <motion.header
+            initial={{
+                opacity: 0,
+                x: 50
+            }}
+            whileInView={{
+                opacity: 1,
+                x: 0, // Slide in to its original position
+                transition: {
+                    duration: 1 // Animation duration
+                }
+            }}
+
+
+            className={`${classes.header} max-width`}>
             <nav className={classes.navbar}>
                 <div className={classes.navWrapper}>
                     <div className={classes.logo}>
@@ -70,7 +85,7 @@ const Navbar = () => {
                     </div>
                 </div>
             </nav>
-        </header>
+        </motion.header>
     );
 };
 
