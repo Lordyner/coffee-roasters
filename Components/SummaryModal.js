@@ -21,12 +21,12 @@ const SummaryModal = ({ qcmList, categorySelected, beanTypeSelected, quantitySel
                     <span className={classes.summary}>
                         {qcmList[0].answers[0].isSelected &&
                             <p className={classes.summary}>
-                                “I drink my coffee using <span className={classes.choice}>{categorySelected}</span>, with a <span className={classes.choice}>{beanTypeSelected}</span> type of bean. <span className={classes.choice}>{quantitySelected}</span>, send to me <span className={classes.choice}>{frequencySelected}”</span>
+                                “I drink my coffee using <span className={classes.choice}>{categorySelected}</span>, with a <span className={classes.choice}>{beanTypeSelected}</span> type of bean. <span className={classes.choice}>{quantitySelected}</span>, send to me <span className={classes.choice}>{frequencySelected}</span>”
                             </p>
                         }
 
                         {!qcmList[0].answers[0].isSelected &&
-                            <p className={classes.summary}>“I drink my coffee as <span className={classes.choice}>{categorySelected}</span>, with a <span className={classes.choice}>{beanTypeSelected}</span> type of bean. <span className={classes.choice}>{quantitySelected}</span> ground ala <span className={classes.choice}>{groundingMethodSelected}</span>, send to me <span className={classes.choice}>{frequencySelected}”</span>
+                            <p className={classes.summary}>“I drink my coffee as <span className={classes.choice}>{categorySelected}</span>, with a <span className={classes.choice}>{beanTypeSelected}</span> type of bean. <span className={classes.choice}>{quantitySelected}</span> ground ala <span className={classes.choice}>{groundingMethodSelected}</span>, send to me <span className={classes.choice}>{frequencySelected}</span>”
                             </p>
                         }
                     </span>
