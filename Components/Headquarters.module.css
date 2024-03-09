@@ -1,6 +1,10 @@
 .headquarters {
     text-align: center;
+}
+
+.container {
     padding-bottom: 7.5rem;
+
 }
 
 .wrapper {
@@ -25,6 +29,10 @@
 
     .headquarters {
         text-align: left;
+
+    }
+
+    .container {
         padding-bottom: 9rem;
     }
 
@@ -40,9 +48,12 @@
     }
 
     .headquarters {
+        width: 100%;
+    }
+
+    .container {
         padding-left: 5.313rem;
         padding-right: 5.313rem;
         padding-bottom: 10.5rem;
-
     }
 }

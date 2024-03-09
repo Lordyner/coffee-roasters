@@ -7,7 +7,7 @@ const Product = ({ title, description, image, alt }) => {
             <Image src={image} alt={alt} className={classes.packageImg} />
             <div className={classes.content}>
                 <h4>{title}</h4>
-                <p>{description}</p>
+                <p className={classes.description}>{description}</p>
             </div>
         </div>
     );

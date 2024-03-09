@@ -1,6 +1,4 @@
 .commitment {
-    max-width: 69.375rem;
-    margin-inline: auto;
     padding-bottom: 7.5rem;
 }
 
@@ -47,11 +45,14 @@
         align-items: flex-start;
         align-self: center;
     }
+
+
 }
 
 @media screen and (min-width: 90rem) {
     .wrapper {
         column-gap: 7.8125rem;
+        padding: 0 5.313rem;
     }
 
     .content {
@@ -60,6 +61,7 @@
     }
 
     .commitment {
-        padding: 0 5.313rem;
+        padding-bottom: 0;
+        width: 100%;
     }
 }

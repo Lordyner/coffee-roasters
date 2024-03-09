@@ -11,7 +11,7 @@ const Commitment = () => {
     const { isMobileResolution } = useContext(GlobalContext);
     const { isTabletResolution } = useContext(GlobalContext);
     return (
-        <section className={classes.commitment}>
+        <section className={`${classes.commitment} max-width`}>
             <div className={classes.wrapper}>
                 <Image src={isMobileResolution ? imageCommitmentMobile : isTabletResolution ? imageCommitmentTablet : imageCommitmentDesktop}
                     className={classes.baristaImg}

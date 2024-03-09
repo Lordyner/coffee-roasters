@@ -9,7 +9,9 @@
     border-radius: 10px;
     position: relative;
     padding: 0 1.5rem 3.8125rem 1.5rem;
-    margin-inline: auto;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 4rem;
 }
 
 
@@ -38,6 +40,38 @@
     height: auto;
     object-fit: cover;
     border-radius: 0.625rem;
-    transform: translateY(-50%);
-    width: auto;
+    margin: auto;
+    /* width: calc(100% - 3rem); */
+    /* position: absolute; */
+    /* transform: translateY(-50%); */
+}
+
+@media screen and (min-width: 48rem) {
+    .wrapper {
+        padding-left: 3.625rem;
+        padding-right: 3.625rem;
+    }
+
+
+    .content h2 {
+        font-size: 2rem;
+        line-height: 3rem;
+    }
+}
+
+@media screen and (min-width: 90rem) {
+    .wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 5.5rem 5.3125rem;
+    }
+
+    .content {
+        text-align: left;
+        align-items: flex-start;
+        align-self: center;
+
+        font-size: 2.5rem;
+        line-height: 3rem;
+    }
 }
