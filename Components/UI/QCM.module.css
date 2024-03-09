@@ -16,8 +16,8 @@
 }
 
 .qcm.disabled {
-    pointer-events: none;
-    opacity: 0.5;
+    pointer-events: none !important;
+    opacity: 0.5 !important;
 }
 
 .header {
@@ -28,12 +28,12 @@
 
 .arrowIcon {
     justify-self: flex-end;
-    transition: transform 0.1s ease-in-out;
+    transition: transform 0.35s ease-in-out;
 
 }
 
 .arrowIcon.up {
-    transition: transform 0.1s ease-in-out;
+    transition: transform 0.35s ease-in-out;
     transform: rotate(-180deg);
 }
 

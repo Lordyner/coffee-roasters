@@ -9,14 +9,13 @@ const QCM = ({ questionIndex, qcm, onClickAnswer }) => {
     const [isFolded, setIsFolded] = useState(qcm.folded);
     const [isDisabled, setIsDisabled] = useState(qcm.disabled);
 
-    const { selectedCategory, setSelectedCategory } = useContext(GlobalContext);
-    const { setSelectedBeanType } = useContext(GlobalContext);
-    const { setSelectedQuantity } = useContext(GlobalContext);
-    const { setSelectedGroundingMethod } = useContext(GlobalContext);
-    const { setSelectedFrequency } = useContext(GlobalContext);
 
-    const { orderSummaryTemplateA, setOrderSummaryTemplateA } = useContext(GlobalContext);
+    const list = { hidden: { opacity: 0 } }
+    const item = {
+        start: { opacity: 0, y: -30, transition: { duration: 0.5, delayChildren: 1 } },
 
+        stop: { opacity: 1, y: 0, transition: { duration: 0.5, delayChildren: 1 } }
+    }
     const handleClickQuestion = () => {
         // Fold or unfold the question, only if it's not disabled
         if (!isDisabled) {
@@ -45,14 +44,21 @@ const QCM = ({ questionIndex, qcm, onClickAnswer }) => {
                 <h3>{qcm.title}</h3>
                 <Image src={iconArrow} alt="arrow" className={`${classes.arrowIcon} ${isFolded ? classes.up : classes.down}`} />
             </div>
-            <div className={`${classes.answers} ${isFolded ? classes.folded : ''}`}>
+            <motion.div variants={list} className={`${classes.answers} ${isFolded ? classes.folded : ''}`}>
                 {qcm.answers.map((answer, index) => (
-                    <div key={index} className={`${classes.answer} ${answer.isSelected ? classes.selected : ''}`} onClick={() => onClickAnswer(questionIndex, index)}>
+                    <motion.div
+                        variants={item}
+                        animate={isFolded ? 'start' : 'stop'}
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 1.05 }}
+                        key={index} className={`${classes.answer} ${answer.isSelected ? classes.selected : ''}`}
+                        onClick={() => onClickAnswer(questionIndex, index)}
+                    >
                         <h4>{answer.title}</h4>
                         <p>{answer.content}</p>
-                    </div>
+                    </motion.div>
                 ))}
-            </div>
+            </motion.div>
         </motion.div>
     );
 };
